@@ -1,0 +1,27 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        url: "https://www.freepublicapis.com"
+      }
+      description: "This API provides access to a collection of 489 free public APIs that are valuable for students and developers alike. Each API is tested daily to ensure reliability and accuracy."
+      license: {
+        name: "Terms of Service"
+        url: "https://www.freepublicapis.com"
+      }
+      servers: [
+        {
+          description: "Production server"
+          url: "https://www.freepublicapis.com"
+        }
+      ]
+      title: "Free Public APIs"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

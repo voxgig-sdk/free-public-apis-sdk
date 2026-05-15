@@ -1,0 +1,22 @@
+# BasicApIFlow
+
+main: kit: flow: BasicApIFlow:
+{
+  entity: "ap_i",
+  kind: "basic",
+  name: "BasicApIFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "ap_i_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicApIFlow"
+}

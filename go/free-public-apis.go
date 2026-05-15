@@ -1,0 +1,50 @@
+package voxgigfreepublicapissdk
+
+import (
+	"github.com/voxgig-sdk/free-public-apis-sdk/core"
+	"github.com/voxgig-sdk/free-public-apis-sdk/entity"
+	"github.com/voxgig-sdk/free-public-apis-sdk/feature"
+	_ "github.com/voxgig-sdk/free-public-apis-sdk/utility"
+)
+
+// Type aliases preserve external API.
+type FreePublicApisSDK = core.FreePublicApisSDK
+type Context = core.Context
+type Utility = core.Utility
+type Feature = core.Feature
+type Entity = core.Entity
+type FreePublicApisEntity = core.FreePublicApisEntity
+type FetcherFunc = core.FetcherFunc
+type Spec = core.Spec
+type Result = core.Result
+type Response = core.Response
+type Operation = core.Operation
+type Control = core.Control
+type FreePublicApisError = core.FreePublicApisError
+
+// BaseFeature from feature package.
+type BaseFeature = feature.BaseFeature
+
+func init() {
+	core.NewBaseFeatureFunc = func() core.Feature {
+		return feature.NewBaseFeature()
+	}
+	core.NewTestFeatureFunc = func() core.Feature {
+		return feature.NewTestFeature()
+	}
+	core.NewApIEntityFunc = func(client *core.FreePublicApisSDK, entopts map[string]any) core.FreePublicApisEntity {
+		return entity.NewApIEntity(client, entopts)
+	}
+}
+
+// Constructor re-exports.
+var NewFreePublicApisSDK = core.NewFreePublicApisSDK
+var TestSDK = core.TestSDK
+var NewContext = core.NewContext
+var NewSpec = core.NewSpec
+var NewResult = core.NewResult
+var NewResponse = core.NewResponse
+var NewOperation = core.NewOperation
+var MakeConfig = core.MakeConfig
+var NewBaseFeature = feature.NewBaseFeature
+var NewTestFeature = feature.NewTestFeature

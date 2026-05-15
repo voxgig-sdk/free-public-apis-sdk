@@ -1,0 +1,14 @@
+# Guide
+
+guide: {
+  metrics: count: entity: 1
+  metrics: count: path: 1
+  metrics: count: method: 1
+
+  entity: ap_i: {
+    path: "/api.php": {
+      op: list: method: *GET
+    }
+  }
+
+}

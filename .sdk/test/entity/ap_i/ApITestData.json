@@ -1,0 +1,57 @@
+{
+  "existing": {
+    "ap_i": {
+      "AP_I00": {
+        "auth": "s64",
+        "category": "s65",
+        "cor": "s66",
+        "description": "s67",
+        "http": true,
+        "id": "AP_I00",
+        "name": "s6a",
+        "status": "s6b",
+        "tested": "s6c",
+        "url": "s6d"
+      },
+      "AP_I01": {
+        "auth": "sc8",
+        "category": "sc9",
+        "cor": "sca",
+        "description": "scb",
+        "http": true,
+        "id": "AP_I01",
+        "name": "sce",
+        "status": "scf",
+        "tested": "sd0",
+        "url": "sd1"
+      },
+      "AP_I02": {
+        "auth": "s12c",
+        "category": "s12d",
+        "cor": "s12e",
+        "description": "s12f",
+        "http": true,
+        "id": "AP_I02",
+        "name": "s132",
+        "status": "s133",
+        "tested": "s134",
+        "url": "s135"
+      }
+    }
+  },
+  "new": {
+    "ap_i": {
+      "ap_i_ref01": {
+        "auth": "s190",
+        "category": "s191",
+        "cor": "s192",
+        "description": "s193",
+        "http": true,
+        "name": "s196",
+        "status": "s197",
+        "tested": "s198",
+        "url": "s199"
+      }
+    }
+  }
+}

@@ -1,0 +1,243 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Free Public APIs",
+    "description": "This API provides access to a collection of 489 free public APIs that are valuable for students and developers alike. Each API is tested daily to ensure reliability and accuracy.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://www.freepublicapis.com"
+    },
+    "license": {
+      "name": "Terms of Service",
+      "url": "https://www.freepublicapis.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://www.freepublicapis.com",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/api.php": {
+      "get": {
+        "summary": "Get list of free public APIs",
+        "description": "Retrieves a collection of free public APIs that are tested daily for reliability and accuracy.",
+        "operationId": "getPublicAPIs",
+        "tags": [
+          "APIs"
+        ],
+        "parameters": [
+          {
+            "name": "category",
+            "in": "query",
+            "description": "Filter APIs by category",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit the number of results returned",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 500
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with list of public APIs",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer",
+                      "description": "Total number of APIs returned",
+                      "example": 489
+                    },
+                    "apis": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Unique identifier for the API"
+                          },
+                          "name": {
+                            "type": "string",
+                            "description": "Name of the API"
+                          },
+                          "description": {
+                            "type": "string",
+                            "description": "Description of the API functionality"
+                          },
+                          "url": {
+                            "type": "string",
+                            "format": "uri",
+                            "description": "URL of the API"
+                          },
+                          "category": {
+                            "type": "string",
+                            "description": "Category of the API"
+                          },
+                          "auth": {
+                            "type": "string",
+                            "description": "Authentication type required"
+                          },
+                          "https": {
+                            "type": "boolean",
+                            "description": "Whether the API supports HTTPS"
+                          },
+                          "cors": {
+                            "type": "string",
+                            "description": "CORS support status"
+                          },
+                          "tested": {
+                            "type": "string",
+                            "format": "date-time",
+                            "description": "Last tested timestamp"
+                          },
+                          "status": {
+                            "type": "string",
+                            "description": "Current status of the API"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "count": 489,
+                  "apis": [
+                    {
+                      "id": "1",
+                      "name": "Example API",
+                      "description": "A free public API for developers",
+                      "url": "https://api.example.com",
+                      "category": "Development",
+                      "auth": "apiKey",
+                      "https": true,
+                      "cors": "yes",
+                      "tested": "2024-01-15T10:30:00Z",
+                      "status": "active"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - invalid parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "API": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the API"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the API"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the API functionality"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL of the API"
+          },
+          "category": {
+            "type": "string",
+            "description": "Category of the API"
+          },
+          "auth": {
+            "type": "string",
+            "description": "Authentication type required"
+          },
+          "https": {
+            "type": "boolean",
+            "description": "Whether the API supports HTTPS"
+          },
+          "cors": {
+            "type": "string",
+            "description": "CORS support status"
+          },
+          "tested": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Last tested timestamp"
+          },
+          "status": {
+            "type": "string",
+            "description": "Current status of the API"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message describing what went wrong"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "APIs",
+      "description": "Operations related to retrieving free public APIs"
+    }
+  ],
+  "externalDocs": {
+    "description": "Free Public APIs Documentation",
+    "url": "https://www.freepublicapis.com/api.php"
+  }
+}
