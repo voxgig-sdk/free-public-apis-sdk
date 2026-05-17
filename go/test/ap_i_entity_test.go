@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/free-public-apis-sdk"
-	"github.com/voxgig-sdk/free-public-apis-sdk/core"
+	sdk "github.com/voxgig-sdk/free-public-apis-sdk/go"
+	"github.com/voxgig-sdk/free-public-apis-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/free-public-apis-sdk/go/utility/struct"
 )
 
 func TestApIEntity(t *testing.T) {
