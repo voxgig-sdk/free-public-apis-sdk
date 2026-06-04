@@ -20,8 +20,27 @@ main: {
       ]
       title: "Free Public APIs"
       version: "1.0.0"
+      tagline: "Browse a curated, daily-tested catalogue of free public APIs for students and developers"
+      homepage: "https://www.freepublicapis.com"
+      docs_url: "https://www.freepublicapis.com"
+      license_short: "Use governed by the freepublicapis.com Terms of Service; each listed API has its own licence."
+      license_md: `- Use of the catalogue is governed by the [freepublicapis.com Terms of Service](https://www.freepublicapis.com/terms-of-service) and [Privacy Policy](https://www.freepublicapis.com/privacy-policy).
+- Each API listed in the catalogue is owned and licensed by its respective provider; consult the linked API's own terms before use.
+- No attribution requirements are documented for the catalogue itself, but individual APIs may require attribution.`
+      about_md: `[Free Public APIs](https://www.freepublicapis.com) is a community-maintained directory of free, publicly accessible APIs aimed at students, hobbyists, and developers looking for data sources to build with. The catalogue lists hundreds of APIs across categories such as AI, weather, sports, entertainment, finance, geography, and more.
+
+What the catalogue surfaces for each entry:
+
+- A description of the API and its provider
+- A link to the upstream API and its documentation
+- Category tags and curated rankings (e.g. Best, Fastest, Most Popular, Newest)
+- Health and reliability metrics derived from daily automated checks
+
+Entries are re-tested every day so listings reflect current reachability rather than a one-time snapshot. The site itself is a browsable directory; the upstream APIs it links to each have their own authentication, rate-limit, and licensing rules that apply when you actually call them.`
+      entity_desc: {
+        ap_i: "An entry in the freepublicapis.com directory, representing a single third-party public API with its metadata, category, and health/reliability information."
+      }
+      auth: false
     }
   }
-}
-
 }

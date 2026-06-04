@@ -119,7 +119,6 @@ func ap_iBasicSetup(extra map[string]any) *entityTestSetup {
 		"FREEPUBLICAPIS_TEST_AP_I_ENTID": idmap,
 		"FREEPUBLICAPIS_TEST_LIVE":      "FALSE",
 		"FREEPUBLICAPIS_TEST_EXPLAIN":   "FALSE",
-		"FREEPUBLICAPIS_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["FREEPUBLICAPIS_TEST_AP_I_ENTID"])
@@ -130,7 +129,6 @@ func ap_iBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["FREEPUBLICAPIS_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["FREEPUBLICAPIS_APIKEY"],
 			},
 			extra,
 		})
