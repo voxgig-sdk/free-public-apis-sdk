@@ -113,6 +113,7 @@ function basicSetup(extra?: any) {
     'FREE_PUBLIC_APIS_TEST_AP_I_ENTID': idmap,
     'FREE_PUBLIC_APIS_TEST_LIVE': 'FALSE',
     'FREE_PUBLIC_APIS_TEST_EXPLAIN': 'FALSE',
+    'FREE_PUBLIC_APIS_APIKEY': 'NONE',
   })
 
   idmap = env['FREE_PUBLIC_APIS_TEST_AP_I_ENTID']
@@ -122,6 +123,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new FreePublicApisSDK(merge([
       {
+        apikey: env.FREE_PUBLIC_APIS_APIKEY,
       },
       extra
     ]))

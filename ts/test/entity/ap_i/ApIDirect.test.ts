@@ -79,12 +79,14 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'FREEPUBLICAPIS_TEST_AP_I_ENTID': {},
     'FREEPUBLICAPIS_TEST_LIVE': 'FALSE',
+    'FREEPUBLICAPIS_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.FREEPUBLICAPIS_TEST_LIVE
 
   if (live) {
     const client = new FreePublicApisSDK({
+      apikey: env.FREEPUBLICAPIS_APIKEY,
     })
 
     let idmap: any = env['FREEPUBLICAPIS_TEST_AP_I_ENTID']

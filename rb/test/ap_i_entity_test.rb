@@ -83,6 +83,7 @@ def ap_i_basic_setup(extra)
     "FREEPUBLICAPIS_TEST_AP_I_ENTID" => idmap,
     "FREEPUBLICAPIS_TEST_LIVE" => "FALSE",
     "FREEPUBLICAPIS_TEST_EXPLAIN" => "FALSE",
+    "FREEPUBLICAPIS_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,6 +95,7 @@ def ap_i_basic_setup(extra)
   if env["FREEPUBLICAPIS_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
+        "apikey" => env["FREEPUBLICAPIS_APIKEY"],
       },
       extra || {},
     ])
