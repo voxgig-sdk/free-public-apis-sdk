@@ -10,7 +10,7 @@ The Python SDK for the FreePublicApis API — an entity-oriented client followin
 
 ## Install
 ```bash
-pip install free-public-apis-sdk
+pip install voxgig-sdk-free-public-apis
 ```
 
 Or install from source:

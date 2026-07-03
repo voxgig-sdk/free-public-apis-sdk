@@ -1,8 +1,17 @@
 {
   "name": "voxgig-sdk/free-public-apis",
-  "description": "FreePublicApis SDK for PHP",
+  "description": "Unofficial generated PHP SDK for the Free Public APIs public API. Not affiliated with or endorsed by the upstream API provider.",
   "type": "library",
+  "keywords": ["voxgig", "sdk", "generated-sdk", "openapi", "api-client", "free-public-apis"],
+  "homepage": "https://github.com/voxgig-sdk/free-public-apis-sdk",
   "license": "MIT",
+  "authors": [
+    { "name": "Voxgig", "homepage": "https://voxgig.com" }
+  ],
+  "support": {
+    "issues": "https://github.com/voxgig-sdk/free-public-apis-sdk/issues",
+    "source": "https://github.com/voxgig-sdk/free-public-apis-sdk"
+  },
   "minimum-stability": "stable",
   "require": {
     "php": ">=8.2"

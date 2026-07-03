@@ -10,13 +10,13 @@ The Ruby SDK for the FreePublicApis API — an entity-oriented client using idio
 
 ## Install
 ```bash
-gem install free-public-apis-sdk
+gem install voxgig-sdk-free-public-apis
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "free-public-apis-sdk"
+gem "voxgig-sdk-free-public-apis"
 ```
 
 Then run:
