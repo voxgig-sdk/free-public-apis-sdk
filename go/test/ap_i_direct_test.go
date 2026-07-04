@@ -93,14 +93,12 @@ func ap_iDirectSetup(mockres any) *ap_iDirectSetupResult {
 	env := envOverride(map[string]any{
 		"FREEPUBLICAPIS_TEST_AP_I_ENTID": map[string]any{},
 		"FREEPUBLICAPIS_TEST_LIVE":    "FALSE",
-		"FREEPUBLICAPIS_APIKEY":       "NONE",
 	})
 
 	live := env["FREEPUBLICAPIS_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["FREEPUBLICAPIS_APIKEY"],
 		}
 		client := sdk.NewFreePublicApisSDK(mergedOpts)
 

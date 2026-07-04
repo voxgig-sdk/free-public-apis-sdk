@@ -43,8 +43,7 @@ class ApIEntityTest < Minitest::Test
     ap_i_ref01_ent = client.ApI(nil)
     ap_i_ref01_match = {}
 
-    ap_i_ref01_list_result, err = ap_i_ref01_ent.list(ap_i_ref01_match, nil)
-    assert_nil err
+    ap_i_ref01_list_result = ap_i_ref01_ent.list(ap_i_ref01_match, nil)
     assert ap_i_ref01_list_result.is_a?(Array)
 
   end
@@ -83,7 +82,6 @@ def ap_i_basic_setup(extra)
     "FREEPUBLICAPIS_TEST_AP_I_ENTID" => idmap,
     "FREEPUBLICAPIS_TEST_LIVE" => "FALSE",
     "FREEPUBLICAPIS_TEST_EXPLAIN" => "FALSE",
-    "FREEPUBLICAPIS_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +93,6 @@ def ap_i_basic_setup(extra)
   if env["FREEPUBLICAPIS_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["FREEPUBLICAPIS_APIKEY"],
       },
       extra || {},
     ])

@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch ApIListMatch
+---@param ctrl? table
+---@return ApI[]
+---@return string? err
 function ApIEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

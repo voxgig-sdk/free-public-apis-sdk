@@ -92,7 +92,6 @@ function ap_i_basic_setup(extra)
     ["FREEPUBLICAPIS_TEST_AP_I_ENTID"] = idmap,
     ["FREEPUBLICAPIS_TEST_LIVE"] = "FALSE",
     ["FREEPUBLICAPIS_TEST_EXPLAIN"] = "FALSE",
-    ["FREEPUBLICAPIS_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -104,7 +103,6 @@ function ap_i_basic_setup(extra)
   if env["FREEPUBLICAPIS_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
-        apikey = env["FREEPUBLICAPIS_APIKEY"],
       },
       extra or {},
     })

@@ -2,6 +2,8 @@
 
 import { ApIEntity } from './entity/ApIEntity'
 
+export type * from './FreePublicApisTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -202,6 +204,14 @@ class FreePublicApisSDK {
 
 
 
+  _ap_i?: ApIEntity
+
+  // Idiomatic facade: `client.ap_i.list()` / `client.ap_i.load({ id })`.
+  get ap_i(): ApIEntity {
+    return (this._ap_i ??= new ApIEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.ap_i` instead. */
   ApI(data?: any) {
     const self = this
     return new ApIEntity(self,data)

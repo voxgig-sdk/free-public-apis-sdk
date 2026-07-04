@@ -244,6 +244,19 @@ end
 
 
 
+-- Idiomatic facade: client:ap_i():list() / client:ap_i():load({ id = ... })
+function FreePublicApisSDK:ap_i(data)
+  local EntityMod = require("entity.ap_i_entity")
+  if data == nil then
+    if self._ap_i == nil then
+      self._ap_i = EntityMod.new(self, nil)
+    end
+    return self._ap_i
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:ap_i() instead.
 function FreePublicApisSDK:ApI(data)
   local EntityMod = require("entity.ap_i_entity")
   return EntityMod.new(self, data)

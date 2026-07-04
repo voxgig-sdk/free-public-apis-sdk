@@ -245,6 +245,9 @@ func (sdk *FreePublicApisSDK) Direct(fetchargs map[string]any) (map[string]any, 
 }
 
 
+// ApI returns a ApI entity bound to this client.
+// Idiomatic usage: client.ApI(nil).List(nil, nil) or
+// client.ApI(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *FreePublicApisSDK) ApI(data map[string]any) FreePublicApisEntity {
 	return NewApIEntityFunc(sdk, data)
 }

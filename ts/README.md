@@ -9,9 +9,12 @@ The TypeScript SDK for the FreePublicApis API — a type-safe, entity-oriented c
 
 
 ## Install
-```bash
-npm install @voxgig-sdk/free-public-apis
-```
+This package is not yet published to npm. Install it from the GitHub
+release tag (`ts/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/free-public-apis-sdk/releases](https://github.com/voxgig-sdk/free-public-apis-sdk/releases)
+
+
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
@@ -20,17 +23,15 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { FreePublicApisSDK } from 'free-public-apis'
+import { FreePublicApisSDK } from '@voxgig-sdk/free-public-apis'
 
-const client = new FreePublicApisSDK({
-  apikey: process.env.FREE-PUBLIC-APIS_APIKEY,
-})
+const client = new FreePublicApisSDK()
 ```
 
 ### 2. List apis
 
 ```ts
-const result = await client.ApI().list()
+const result = await client.api.list()
 
 if (result.ok) {
   for (const item of result.data) {
@@ -81,7 +82,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = FreePublicApisSDK.test()
 
-const result = await client.Planet().load({ id: 'test01' })
+const result = await client.api.load({ id: 'test01' })
 // result.ok === true
 // result.data contains mock response data
 ```
@@ -89,7 +90,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new FreePublicApisSDK({ apikey: '...' })
+const client = new FreePublicApisSDK()
 const testClient = client.tester()
 ```
 
@@ -98,7 +99,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Planet()
+const entity = client.api
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -125,7 +126,6 @@ const logger = {
 }
 
 const client = new FreePublicApisSDK({
-  apikey: '...',
   extend: [logger],
 })
 ```
@@ -135,8 +135,7 @@ const client = new FreePublicApisSDK({
 Create a `.env.local` file at the project root:
 
 ```
-FREE-PUBLIC-APIS_TEST_LIVE=TRUE
-FREE-PUBLIC-APIS_APIKEY=<your-key>
+FREE_PUBLIC_APIS_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -154,7 +153,6 @@ cd ts && npm test
 
 ```ts
 new FreePublicApisSDK(options?: {
-  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -165,7 +163,6 @@ new FreePublicApisSDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -277,7 +274,7 @@ API path: `/api.php`
 
 ### ApI
 
-Create an instance: `const ap_i = client.ApI()`
+Create an instance: `const ap_i = client.ap_i`
 
 #### Operations
 
@@ -303,7 +300,7 @@ Create an instance: `const ap_i = client.ApI()`
 #### Example: List
 
 ```ts
-const ap_is = await client.ApI().list()
+const ap_is = await client.ap_i.list()
 ```
 
 
@@ -364,7 +361,7 @@ free-public-apis/
 Import the SDK from the package root:
 
 ```ts
-import { FreePublicApisSDK } from 'free-public-apis'
+import { FreePublicApisSDK } from '@voxgig-sdk/free-public-apis'
 ```
 
 ### Entity state
@@ -374,11 +371,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const moon = client.Moon()
-await moon.load({ planet_id: 'earth', id: 'luna' })
+const api = client.api
+await api.load({ id: "example_id" })
 
-// moon.data() now returns the loaded moon data
-// moon.match() returns { planet_id: 'earth', id: 'luna' }
+// api.data() now returns the loaded api data
+// api.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration

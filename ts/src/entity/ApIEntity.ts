@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  ApI,
+  ApIListMatch,
+} from '../FreePublicApisTypes'
 
 // TODO: needs Entity superclass
-class ApIEntity extends FreePublicApisEntityBase {
+class ApIEntity extends FreePublicApisEntityBase<ApI> {
 
   constructor(client: FreePublicApisSDK, entopts: any) {
     super(client, entopts)
@@ -33,7 +37,7 @@ class ApIEntity extends FreePublicApisEntityBase {
 
 
 
-  async list(this: any, reqmatch?: any, ctrl?: Control) {
+  async list(this: any, reqmatch?: ApIListMatch, ctrl?: Control): Promise<ApI[]> {
 
     const utility = this._utility
 
@@ -133,7 +137,9 @@ class ApIEntity extends FreePublicApisEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<ApI[]> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }
