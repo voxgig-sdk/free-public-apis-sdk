@@ -85,7 +85,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## ApIEntity
 
 ```php
-$ap_i = $client->ap_i();
+$ap_i = $client->ApI();
 ```
 
 ### Fields
@@ -110,7 +110,7 @@ $ap_i = $client->ap_i();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->ap_i()->list([]);
+$results = $client->ApI()->list([]);
 ```
 
 ### Common Methods

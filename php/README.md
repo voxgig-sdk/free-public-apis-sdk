@@ -29,18 +29,16 @@ require_once 'freepublicapis_sdk.php';
 $client = new FreePublicApisSDK();
 ```
 
-### 2. List apis
+### 2. List api records
 
 ```php
 try {
-    $result = $client->api()->list();
-    if (is_array($result)) {
-        foreach ($result as $item) {
-            $d = $item->data_get();
-            echo $d["id"] . " " . $d["name"] . "\n";
-        }
+    // list() returns an array of ApI records — iterate directly.
+    $apis = $client->ApI()->list();
+    foreach ($apis as $item) {
+        echo $item["id"] . " " . $item["name"] . "\n";
     }
-} catch (\Exception $err) {
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -86,13 +84,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = FreePublicApisSDK::test();
+$client = FreePublicApisSDK::test([
+    "entity" => ["api" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->api()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$api = $client->ApI()->load(["id" => "test01"]);
+print_r($api);
 ```
 
 ### Use a custom fetch function
@@ -171,7 +173,7 @@ Creates a test-mode client with mock transport. Both arguments may be `null`.
 | `get_utility` | `(): Utility` | Copy of the SDK utility object. |
 | `prepare` | `(array $fetchargs): array` | Build an HTTP request definition without sending. |
 | `direct` | `(array $fetchargs): array` | Build and send an HTTP request. |
-| `ApI` | `($data): ApIEntity` | Create a ApI entity instance. |
+| `ApI` | `($data): ApIEntity` | Create an ApI entity instance. |
 
 ### Entity interface
 
@@ -237,7 +239,7 @@ API path: `/api.php`
 
 ### ApI
 
-Create an instance: `const ap_i = client.ap_i`
+Create an instance: `$ap_i = $client->ApI();`
 
 #### Operations
 
@@ -262,8 +264,9 @@ Create an instance: `const ap_i = client.ap_i`
 
 #### Example: List
 
-```ts
-const ap_is = await client.ap_i.list()
+```php
+// list() returns an array of ApI records (throws on error).
+$ap_is = $client->ApI()->list();
 ```
 
 
@@ -338,7 +341,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$api = $client->api();
+$api = $client->ApI();
 $api->load(["id" => "example_id"]);
 
 // $api->dataGet() now returns the loaded api data

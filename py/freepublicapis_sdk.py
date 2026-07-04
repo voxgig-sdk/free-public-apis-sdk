@@ -220,25 +220,15 @@ class FreePublicApisSDK:
         }
 
 
-    @property
-    def ap_i(self):
-        """Idiomatic facade: client.ap_i.list() / client.ap_i.load({"id": ...})."""
-        from entity.ap_i_entity import ApIEntity
-        cached = getattr(self, "_ap_i", None)
-        if cached is None:
-            cached = ApIEntity(self, None)
-            self._ap_i = cached
-        return cached
-
-    def ApI(self, data=None):
-        # Deprecated: use client.ap_i instead.
+    def ApI(self, data=None) -> "ApIEntity":
+        """Entity factory: client.ApI().list({}) / client.ApI().load({"id": ...})."""
         from entity.ap_i_entity import ApIEntity
         return ApIEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "FreePublicApisSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -258,3 +248,9 @@ class FreePublicApisSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.ap_i_entity import ApIEntity

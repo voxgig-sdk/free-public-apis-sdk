@@ -233,10 +233,10 @@ class FreePublicApisSDK
 
     private $_ap_i = null;
 
-    // Idiomatic facade: $client->ap_i()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias ApI() (PHP method
-    // names are case-insensitive).
-    public function ap_i($data = null)
+    // Canonical facade: $client->ApI()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->ap_i()
+    // resolves here too.
+    public function ApI($data = null)
     {
         require_once __DIR__ . '/entity/ap_i_entity.php';
         if ($data === null) {

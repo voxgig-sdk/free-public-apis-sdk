@@ -80,7 +80,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## ApIEntity
 
 ```python
-ap_i = client.ap_i
+ap_i = client.ApI()
 ```
 
 ### Fields
@@ -105,7 +105,9 @@ ap_i = client.ap_i
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.ap_i.list({})
+results = client.ApI().list({})
+for ap_i in results:
+    print(ap_i)
 ```
 
 ### Common Methods

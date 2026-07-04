@@ -83,7 +83,7 @@ same parameters as `direct()`.
 ## ApIEntity
 
 ```lua
-local ap_i = client:ap_i(nil)
+local ap_i = client:ApI(nil)
 ```
 
 ### Fields
@@ -108,7 +108,7 @@ local ap_i = client:ap_i(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:ap_i():list()
+local results, err = client:ApI():list()
 ```
 
 ### Common Methods

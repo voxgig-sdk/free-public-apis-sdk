@@ -208,13 +208,7 @@ class FreePublicApisSDK
   end
 
 
-  # Idiomatic facade: client.ap_i.list / client.ap_i.load({ "id" => ... })
-  def ap_i
-    require_relative 'entity/ap_i_entity'
-    @ap_i ||= ApIEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.ap_i instead.
+  # Canonical facade: client.ApI.list / client.ApI.load({ "id" => ... })
   def ApI(data = nil)
     require_relative 'entity/ap_i_entity'
     ApIEntity.new(self, data)

@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:ap_i():list() / client:ap_i():load({ id = ... })
-function FreePublicApisSDK:ap_i(data)
+-- Idiomatic facade: client:ApI():list() / client:ApI():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function FreePublicApisSDK:ApI(data)
   local EntityMod = require("entity.ap_i_entity")
   if data == nil then
     if self._ap_i == nil then
@@ -253,12 +254,6 @@ function FreePublicApisSDK:ap_i(data)
     end
     return self._ap_i
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:ap_i() instead.
-function FreePublicApisSDK:ApI(data)
-  local EntityMod = require("entity.ap_i_entity")
   return EntityMod.new(self, data)
 end
 

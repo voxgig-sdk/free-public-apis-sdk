@@ -86,7 +86,7 @@ same parameters as `direct()`. Raises on error.
 ## ApIEntity
 
 ```ruby
-ap_i = client.ap_i
+ap_i = client.ApI
 ```
 
 ### Fields
@@ -111,7 +111,7 @@ ap_i = client.ap_i
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.ap_i.list(nil)
+results = client.ApI.list(nil)
 ```
 
 ### Common Methods

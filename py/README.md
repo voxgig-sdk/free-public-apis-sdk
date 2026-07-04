@@ -31,14 +31,16 @@ from freepublicapis_sdk import FreePublicApisSDK
 client = FreePublicApisSDK()
 ```
 
-### 2. List apis
+### 2. List api records
+
+`list()` returns a `list` of records (each a `dict`) and raises on
+error — iterate it directly.
 
 ```python
 try:
-    result = client.api.list()
-    for item in result:
-        d = item.data_get()
-        print(d["id"], d["name"])
+    apis = client.ApI().list({})
+    for api in apis:
+        print(api)
 except Exception as err:
     print(f"list failed: {err}")
 ```
@@ -86,8 +88,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = FreePublicApisSDK.test()
 
-result = client.api.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+api = client.ApI().load({"id": "test01"})
+# api contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -163,7 +166,7 @@ Creates a test-mode client with mock transport. Both arguments may be `None`.
 | `get_utility` | `() -> Utility` | Copy of the SDK utility object. |
 | `prepare` | `(fetchargs) -> dict` | Build an HTTP request definition without sending. Raises on error. |
 | `direct` | `(fetchargs) -> dict` | Build and send an HTTP request. Returns a result dict (branch on `ok`). |
-| `ApI` | `(data) -> ApIEntity` | Create a ApI entity instance. |
+| `ApI` | `(data) -> ApIEntity` | Create an ApI entity instance. |
 
 ### Entity interface
 
@@ -229,7 +232,7 @@ API path: `/api.php`
 
 ### ApI
 
-Create an instance: `const ap_i = client.ap_i`
+Create an instance: `ap_i = client.ApI()`
 
 #### Operations
 
@@ -254,8 +257,8 @@ Create an instance: `const ap_i = client.ap_i`
 
 #### Example: List
 
-```ts
-const ap_is = await client.ap_i.list()
+```python
+ap_is = client.ApI().list({})
 ```
 
 
@@ -329,7 +332,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-api = client.api
+api = client.ApI()
 api.load({"id": "example_id"})
 
 # api.data_get() now returns the loaded api data

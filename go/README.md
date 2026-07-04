@@ -30,37 +30,33 @@ go mod edit -replace github.com/voxgig-sdk/free-public-apis-sdk/go=../free-publi
 This tutorial walks through creating a client, listing entities, and
 loading a specific record.
 
-### 1. Create a client
+### Quickstart
+
+A complete program: create a client, then call the entity operations.
+Each operation returns `(value, error)` — the value is the data itself
+(there is no `{ok, data}` wrapper), so check `err` and use the value
+directly.
 
 ```go
 package main
 
 import (
     "fmt"
-
     sdk "github.com/voxgig-sdk/free-public-apis-sdk/go"
-    "github.com/voxgig-sdk/free-public-apis-sdk/go/core"
 )
 
 func main() {
     client := sdk.New()
-```
 
-### 2. List apis
-
-```go
-    result, err := client.ApI(nil).List(nil, nil)
+    // List api records — the value is the array of records itself.
+    apis, err := client.ApI(nil).List(nil, nil)
     if err != nil {
         panic(err)
     }
-
-    rm := core.ToMapAny(result)
-    if rm["ok"] == true {
-        for _, item := range rm["data"].([]any) {
-            p := core.ToMapAny(item)
-            fmt.Println(p["id"], p["name"])
-        }
+    for _, item := range apis.([]any) {
+        fmt.Println(item)
     }
+}
 ```
 
 
@@ -110,10 +106,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-result, err := client.ApI(nil).Load(
+api, err := client.ApI(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
-// result contains mock response data
+if err != nil {
+    panic(err)
+}
+fmt.Println(api) // the loaded mock data
 ```
 
 ### Use a custom fetch function
@@ -190,7 +189,7 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `GetUtility` | `() *Utility` | Copy of the SDK utility object. |
 | `Prepare` | `(fetchargs map[string]any) (map[string]any, error)` | Build an HTTP request definition without sending. |
 | `Direct` | `(fetchargs map[string]any) (map[string]any, error)` | Build and send an HTTP request. |
-| `ApI` | `(data map[string]any) FreePublicApisEntity` | Create a ApI entity instance. |
+| `ApI` | `(data map[string]any) FreePublicApisEntity` | Create an ApI entity instance. |
 
 ### Entity interface (FreePublicApisEntity)
 
@@ -210,17 +209,24 @@ All entities implement the `FreePublicApisEntity` interface.
 
 ### Result shape
 
-Entity operations return `(any, error)`. The `any` value is a
-`map[string]any` with these keys:
+Entity operations return `(value, error)`. The `value` is the
+operation's data **directly** — there is no wrapper:
 
-| Key | Type | Description |
-| --- | --- | --- |
-| `"ok"` | `bool` | `true` if the HTTP status is 2xx. |
-| `"status"` | `int` | HTTP status code. |
-| `"headers"` | `map[string]any` | Response headers. |
-| `"data"` | `any` | Parsed JSON response body. |
+| Operation | `value` |
+| --- | --- |
+| `Load` / `Create` / `Update` / `Remove` | the entity record (`map[string]any`) |
+| `List` | a `[]any` of entity records |
 
-On error, `"ok"` is `false` and `"err"` contains the error value.
+Check `err` first, then use the value directly (or the typed
+`...Typed` variants, which return the entity's model struct and a typed
+slice):
+
+    api, err := client.ApI(nil).Load(map[string]any{"id": "example_id"}, nil)
+    if err != nil { /* handle */ }
+    // api is the loaded record
+
+Only `Direct()` returns a response envelope — a `map[string]any` with
+`"ok"`, `"status"`, `"headers"`, and `"data"` keys.
 
 ### Entities
 
@@ -276,7 +282,11 @@ Create an instance: `ap_i := client.ApI(nil)`
 #### Example: List
 
 ```go
-results, err := client.ApI(nil).List(nil, nil)
+ap_is, err := client.ApI(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(ap_is) // the array of records
 ```
 
 

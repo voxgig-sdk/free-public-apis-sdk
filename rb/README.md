@@ -28,16 +28,14 @@ require_relative "FreePublicApis_sdk"
 client = FreePublicApisSDK.new
 ```
 
-### 2. List apis
+### 2. List api records
 
 ```ruby
 begin
-  result = client.api.list
-  if result.is_a?(Array)
-    result.each do |item|
-      d = item.data_get
-      puts "#{d["id"]} #{d["name"]}"
-    end
+  # list returns an Array of ApI records — iterate directly.
+  apis = client.ApI.list
+  apis.each do |item|
+    puts "#{item["id"]} #{item["name"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -85,13 +83,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = FreePublicApisSDK.test
+client = FreePublicApisSDK.test({
+  "entity" => { "api" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.api.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+api = client.ApI.load({ "id" => "test01" })
+puts api
 ```
 
 ### Use a custom fetch function
@@ -167,7 +169,7 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `get_utility` | `() -> Utility` | Copy of the SDK utility object. |
 | `prepare` | `(fetchargs) -> Hash` | Build an HTTP request definition without sending. Raises on error. |
 | `direct` | `(fetchargs) -> Hash` | Build and send an HTTP request. Returns a result hash (`result["ok"]`); does not raise. |
-| `ApI` | `(data) -> ApIEntity` | Create a ApI entity instance. |
+| `ApI` | `(data) -> ApIEntity` | Create an ApI entity instance. |
 
 ### Entity interface
 
@@ -232,7 +234,7 @@ API path: `/api.php`
 
 ### ApI
 
-Create an instance: `const ap_i = client.ap_i`
+Create an instance: `ap_i = client.ApI`
 
 #### Operations
 
@@ -257,8 +259,9 @@ Create an instance: `const ap_i = client.ap_i`
 
 #### Example: List
 
-```ts
-const ap_is = await client.ap_i.list()
+```ruby
+# list returns an Array of ApI records (raises on error).
+ap_is = client.ApI.list
 ```
 
 
@@ -333,7 +336,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-api = client.api
+api = client.ApI
 api.load({ "id" => "example_id" })
 
 # api.data_get now returns the loaded api data

@@ -109,7 +109,7 @@ Alias for `FreePublicApisSDK.test()`.
 ## ApIEntity
 
 ```ts
-const ap_i = client.ap_i
+const ap_i = client.ApI()
 ```
 
 ### Fields
@@ -134,7 +134,7 @@ const ap_i = client.ap_i
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.ap_i.list()
+const results = await client.ApI().list()
 ```
 
 ### Common Methods
