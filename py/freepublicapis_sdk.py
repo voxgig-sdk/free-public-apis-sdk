@@ -221,7 +221,7 @@ class FreePublicApisSDK:
 
 
     def ApI(self, data=None) -> "ApIEntity":
-        """Entity factory: client.ApI().list({}) / client.ApI().load({"id": ...})."""
+        """Entity factory: client.ApI().list() / client.ApI().load({"id": ...})."""
         from entity.ap_i_entity import ApIEntity
         return ApIEntity(self, data)
 

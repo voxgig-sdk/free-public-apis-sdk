@@ -116,16 +116,16 @@ const ap_i = client.ApI()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `auth` | ``$STRING`` | No |  |
-| `category` | ``$STRING`` | No |  |
-| `cor` | ``$STRING`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `http` | ``$BOOLEAN`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `tested` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `auth` | `string` | No |  |
+| `category` | `string` | No |  |
+| `cor` | `string` | No |  |
+| `description` | `string` | No |  |
+| `http` | `boolean` | No |  |
+| `id` | `string` | No |  |
+| `name` | `string` | No |  |
+| `status` | `string` | No |  |
+| `tested` | `string` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 

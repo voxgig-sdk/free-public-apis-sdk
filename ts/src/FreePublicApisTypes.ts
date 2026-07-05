@@ -18,5 +18,16 @@ export interface ApI {
   url?: string
 }
 
-export type ApIListMatch = Partial<ApI>
+export interface ApIListMatch {
+  auth?: string
+  category?: string
+  cor?: string
+  description?: string
+  http?: boolean
+  id?: string
+  name?: string
+  status?: string
+  tested?: string
+  url?: string
+}
 

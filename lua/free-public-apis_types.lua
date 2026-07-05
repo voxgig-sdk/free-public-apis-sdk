@@ -19,6 +19,16 @@
 ---@field url? string
 
 ---@class ApIListMatch
+---@field auth? string
+---@field category? string
+---@field cor? string
+---@field description? string
+---@field http? boolean
+---@field id? string
+---@field name? string
+---@field status? string
+---@field tested? string
+---@field url? string
 
 local M = {}
 

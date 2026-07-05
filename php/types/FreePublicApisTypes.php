@@ -27,7 +27,7 @@ class ApI
     public ?string $url = null;
 }
 
-/** Match filter for ApI#list (any subset of ApI fields). */
+/** Request payload for ApI#list. */
 class ApIListMatch
 {
     public ?string $auth = null;

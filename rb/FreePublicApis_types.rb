@@ -53,7 +53,7 @@ ApI = Struct.new(
   keyword_init: true
 )
 
-# Match filter for ApI#list (any subset of ApI fields).
+# Request payload for ApI#list.
 #
 # @!attribute [rw] auth
 #   @return [String, nil]

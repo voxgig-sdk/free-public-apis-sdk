@@ -22,8 +22,7 @@ type ApI struct {
 	Url *string `json:"url,omitempty"`
 }
 
-// ApIListMatch mirrors the ap_i fields as an all-optional match
-// filter (Go analog of Partial<ApI>).
+// ApIListMatch is the typed request payload for ApI.ListTyped.
 type ApIListMatch struct {
 	Auth *string `json:"auth,omitempty"`
 	Category *string `json:"category,omitempty"`

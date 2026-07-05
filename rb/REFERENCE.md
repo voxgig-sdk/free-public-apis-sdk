@@ -8,7 +8,7 @@ Complete API reference for the FreePublicApis Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'free-public-apis_sdk'
+require_relative 'FreePublicApis_sdk'
 
 client = FreePublicApisSDK.new(options)
 ```
@@ -93,25 +93,25 @@ ap_i = client.ApI
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `auth` | ``$STRING`` | No |  |
-| `category` | ``$STRING`` | No |  |
-| `cor` | ``$STRING`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `http` | ``$BOOLEAN`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `tested` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `auth` | `String` | No |  |
+| `category` | `String` | No |  |
+| `cor` | `String` | No |  |
+| `description` | `String` | No |  |
+| `http` | `Boolean` | No |  |
+| `id` | `String` | No |  |
+| `name` | `String` | No |  |
+| `status` | `String` | No |  |
+| `tested` | `String` | No |  |
+| `url` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.ApI.list(nil)
+results = client.ApI.list
 ```
 
 ### Common Methods

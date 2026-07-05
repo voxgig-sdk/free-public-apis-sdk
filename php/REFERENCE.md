@@ -8,7 +8,7 @@ Complete API reference for the FreePublicApis PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/free-public-apis_sdk.php';
+require_once __DIR__ . '/freepublicapis_sdk.php';
 
 $client = new FreePublicApisSDK($options);
 ```
@@ -45,11 +45,11 @@ $client = FreePublicApisSDK::test();
 
 Create a new `ApIEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): FreePublicApisUtility`
 
 Return a copy of the SDK utility object.
 
@@ -92,42 +92,42 @@ $ap_i = $client->ApI();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `auth` | ``$STRING`` | No |  |
-| `category` | ``$STRING`` | No |  |
-| `cor` | ``$STRING`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `http` | ``$BOOLEAN`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `tested` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `auth` | `string` | No |  |
+| `category` | `string` | No |  |
+| `cor` | `string` | No |  |
+| `description` | `string` | No |  |
+| `http` | `bool` | No |  |
+| `id` | `string` | No |  |
+| `name` | `string` | No |  |
+| `status` | `string` | No |  |
+| `tested` | `string` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->ApI()->list([]);
+$results = $client->ApI()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -136,7 +136,7 @@ Set the entity match criteria.
 Create a new `ApIEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

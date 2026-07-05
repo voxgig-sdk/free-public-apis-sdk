@@ -8,7 +8,7 @@ Complete API reference for the FreePublicApis Python SDK.
 ### Constructor
 
 ```python
-from free-public-apis_sdk import FreePublicApisSDK
+from freepublicapis_sdk import FreePublicApisSDK
 
 client = FreePublicApisSDK(options)
 ```
@@ -87,25 +87,25 @@ ap_i = client.ApI()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `auth` | ``$STRING`` | No |  |
-| `category` | ``$STRING`` | No |  |
-| `cor` | ``$STRING`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `http` | ``$BOOLEAN`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `tested` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `auth` | `str` | No |  |
+| `category` | `str` | No |  |
+| `cor` | `str` | No |  |
+| `description` | `str` | No |  |
+| `http` | `bool` | No |  |
+| `id` | `str` | No |  |
+| `name` | `str` | No |  |
+| `status` | `str` | No |  |
+| `tested` | `str` | No |  |
+| `url` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.ApI().list({})
+results = client.ApI().list()
 for ap_i in results:
     print(ap_i)
 ```
