@@ -50,12 +50,12 @@ import (
 func main() {
     client := sdk.New()
 
-    // List api records — the value is the array of records itself.
-    apis, err := client.ApI(nil).List(nil, nil)
+    // List apI records — the value is the array of records itself.
+    apIs, err := client.ApI(nil).List(nil, nil)
     if err != nil {
         panic(err)
     }
-    for _, item := range apis.([]any) {
+    for _, item := range apIs.([]any) {
         fmt.Println(item)
     }
 }
@@ -137,13 +137,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-api, err := client.ApI(nil).List(
+apI, err := client.ApI(nil).List(
     nil, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(api) // the returned mock data
+fmt.Println(apI) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -247,9 +247,9 @@ Check `err` first, then use the value directly (or the typed
 `...Typed` variants, which return the entity's model struct and a typed
 slice):
 
-    api, err := client.ApI(nil).List(map[string]any{/* fields */}, nil)
+    apI, err := client.ApI(nil).List(map[string]any{/* fields */}, nil)
     if err != nil { /* handle */ }
-    // api is the returned record
+    // apI is the returned record
 
 Only `Direct()` returns a response envelope — a `map[string]any` with
 `"ok"`, `"status"`, `"headers"`, and `"data"` keys.
@@ -282,7 +282,7 @@ API path: `/api.php`
 
 ### ApI
 
-Create an instance: `ap_i := client.ApI(nil)`
+Create an instance: `apI := client.ApI(nil)`
 
 #### Operations
 
@@ -308,11 +308,11 @@ Create an instance: `ap_i := client.ApI(nil)`
 #### Example: List
 
 ```go
-ap_is, err := client.ApI(nil).List(nil, nil)
+apIs, err := client.ApI(nil).List(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(ap_is) // the array of records
+fmt.Println(apIs) // the array of records
 ```
 
 

@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -276,14 +273,17 @@
           "name": "Terms of Service",
           "url": "https://www.freepublicapis.com"
         },
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Production server",
             "url": "https://www.freepublicapis.com"
           }
         ],
+        "summary": "This API provides access to a collection of 489 free public APIs that are valuable for students and developers alike.",
         "title": "Free Public APIs",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://www.freepublicapis.com/api.php"
       },
       "option": {},
       "target": {
@@ -336,6 +336,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -386,6 +389,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },

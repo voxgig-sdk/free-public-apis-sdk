@@ -90,7 +90,8 @@ same parameters as `Direct()`.
 ## ApIEntity
 
 ```go
-ap_i := client.ApI(nil)
+apI := client.ApI(nil)
+fmt.Println(apI.GetName()) // "ap_i"
 ```
 
 ### Fields
@@ -116,6 +117,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.ApI(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods
