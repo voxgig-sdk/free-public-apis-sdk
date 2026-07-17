@@ -1,4 +1,4 @@
--- ProjectName SDK configuration
+-- FreePublicApis SDK configuration
 
 local function make_config()
   return {

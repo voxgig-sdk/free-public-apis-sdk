@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- FreePublicApis SDK exists test
 
 local sdk = require("free-public-apis_sdk")
 
