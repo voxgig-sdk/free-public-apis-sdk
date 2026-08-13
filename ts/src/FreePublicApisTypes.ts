@@ -8,9 +8,9 @@
 export interface ApI {
   auth?: string
   category?: string
-  cor?: string
+  cors?: string
   description?: string
-  http?: boolean
+  https?: boolean
   id?: string
   name?: string
   status?: string
@@ -21,9 +21,9 @@ export interface ApI {
 export interface ApIListMatch {
   auth?: string
   category?: string
-  cor?: string
+  cors?: string
   description?: string
-  http?: boolean
+  https?: boolean
   id?: string
   name?: string
   status?: string

@@ -41,7 +41,7 @@ module FreePublicApisConfig
             },
             {
               "active" => true,
-              "name" => "cor",
+              "name" => "cors",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 2,
@@ -55,7 +55,7 @@ module FreePublicApisConfig
             },
             {
               "active" => true,
-              "name" => "http",
+              "name" => "https",
               "req" => false,
               "type" => "`$BOOLEAN`",
               "index$" => 4,
@@ -124,6 +124,7 @@ module FreePublicApisConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api.php",
                   "parts" => [
@@ -137,7 +138,7 @@ module FreePublicApisConfig
                   },
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body`",
+                    "res" => "`body.apis`",
                   },
                   "index$" => 0,
                 },

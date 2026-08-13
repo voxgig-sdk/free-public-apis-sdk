@@ -26,8 +26,8 @@ import {
 describe('ApIEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when FREEPUBLICAPIS_TEST_LIVE=TRUE.
-  afterEach(liveDelay('FREEPUBLICAPIS_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when FREE_PUBLIC_APIS_TEST_LIVE=TRUE.
+  afterEach(liveDelay('FREE_PUBLIC_APIS_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = FreePublicApisSDK.test()
@@ -63,7 +63,7 @@ describe('ApIEntity', async () => {
     const ap_i_ref01_ent = client.ApI()
     const ap_i_ref01_match: any = {}
 
-    const ap_i_ref01_list = await ap_i_ref01_ent.list(ap_i_ref01_match)
+    const ap_i_ref01_list = (await ap_i_ref01_ent.list(ap_i_ref01_match)).map((e: any) => e.data())
 
 
   })

@@ -40,7 +40,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "cor",
+						"name": "cors",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 2,
@@ -54,7 +54,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "http",
+						"name": "https",
 						"req": false,
 						"type": "`$BOOLEAN`",
 						"index$": 4,
@@ -123,6 +123,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/api.php",
 								"parts": []any{
@@ -136,12 +137,11 @@ func MakeConfig() map[string]any {
 								},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.apis`",
 								},
 								"index$": 0,
 							},
 						},
-						"key$": "list",
 					},
 				},
 				"relations": map[string]any{

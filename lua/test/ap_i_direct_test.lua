@@ -61,11 +61,11 @@ function ap_i_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["FREEPUBLICAPIS_TEST_AP_I_ENTID"] = {},
-    ["FREEPUBLICAPIS_TEST_LIVE"] = "FALSE",
+    ["FREE_PUBLIC_APIS_TEST_AP_I_ENTID"] = {},
+    ["FREE_PUBLIC_APIS_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["FREEPUBLICAPIS_TEST_LIVE"] == "TRUE"
+  local live = env["FREE_PUBLIC_APIS_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import FreePublicApisSDK
-from core.error import FreePublicApisError
-from core.result import FreePublicApisResult
-from core.response import FreePublicApisResponse
-from core.spec import FreePublicApisSpec
-from feature.base_feature import FreePublicApisBaseFeature
+from projectname_sdk.core.error import FreePublicApisError
+from projectname_sdk.core.result import FreePublicApisResult
+from projectname_sdk.core.response import FreePublicApisResponse
+from projectname_sdk.core.spec import FreePublicApisSpec
+from projectname_sdk.feature.base_feature import FreePublicApisBaseFeature
 
 
 def _client():

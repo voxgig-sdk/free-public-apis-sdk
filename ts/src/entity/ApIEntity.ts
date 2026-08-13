@@ -37,7 +37,7 @@ class ApIEntity extends FreePublicApisEntityBase<ApI> {
 
 
 
-  async list(this: any, reqmatch?: ApIListMatch, ctrl?: Control): Promise<ApI[]> {
+  async list(this: any, reqmatch?: ApIListMatch, ctrl?: Control): Promise<ApIEntity[]> {
 
     const utility = this._utility
 

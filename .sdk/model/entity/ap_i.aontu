@@ -16,7 +16,7 @@ main: kit: entity: ap_i: {
       type: "`$STRING`"
     }
     {
-      name: "cor"
+      name: "cors"
       req: false
       type: "`$STRING`"
     }
@@ -26,7 +26,7 @@ main: kit: entity: ap_i: {
       type: "`$STRING`"
     }
     {
-      name: "http"
+      name: "https"
       req: false
       type: "`$BOOLEAN`"
     }
@@ -99,7 +99,7 @@ main: kit: entity: ap_i: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.apis`"
           }
         }
       ]

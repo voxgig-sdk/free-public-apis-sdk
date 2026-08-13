@@ -262,9 +262,9 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | --- | --- |
 | `"auth"` |  |
 | `"category"` |  |
-| `"cor"` |  |
+| `"cors"` |  |
 | `"description"` |  |
-| `"http"` |  |
+| `"https"` |  |
 | `"id"` |  |
 | `"name"` |  |
 | `"status"` |  |
@@ -296,9 +296,9 @@ Create an instance: `apI := client.ApI(nil)`
 | --- | --- | --- |
 | `auth` | `string` |  |
 | `category` | `string` |  |
-| `cor` | `string` |  |
+| `cors` | `string` |  |
 | `description` | `string` |  |
-| `http` | `bool` |  |
+| `https` | `bool` |  |
 | `id` | `string` |  |
 | `name` | `string` |  |
 | `status` | `string` |  |

@@ -218,9 +218,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local ap_i, err = client:ApI():load()
+    local ap_i, err = client:ApI():list()
     if err then error(err) end
-    -- ap_i is the loaded record
+    -- ap_i is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -233,9 +233,9 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | --- | --- |
 | `auth` |  |
 | `category` |  |
-| `cor` |  |
+| `cors` |  |
 | `description` |  |
-| `http` |  |
+| `https` |  |
 | `id` |  |
 | `name` |  |
 | `status` |  |
@@ -267,9 +267,9 @@ Create an instance: `local ap_i = client:ApI(nil)`
 | --- | --- | --- |
 | `auth` | `string` |  |
 | `category` | `string` |  |
-| `cor` | `string` |  |
+| `cors` | `string` |  |
 | `description` | `string` |  |
-| `http` | `boolean` |  |
+| `https` | `boolean` |  |
 | `id` | `string` |  |
 | `name` | `string` |  |
 | `status` | `string` |  |

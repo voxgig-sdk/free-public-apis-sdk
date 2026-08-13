@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = FreePublicApisSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = FreePublicApisSDK.test({
+  entity: {
+    ap_i: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const apis = await client.ApI().list()
-// apis is an array of bare ApI records populated with mock data
+// apis is an array of ApI entities, populated with mock data
+// — call apis[0].data() for the record itself
 console.log(apis)
 ```
 
@@ -110,7 +119,7 @@ import { FreePublicApisSDK } from '@voxgig-sdk/free-public-apis'
 
 const client = new FreePublicApisSDK()
 
-// List all apis (returns ApI[])
+// List all apis (returns ApIEntity[] — .data() for the record)
 const apis = await client.ApI().list()
 for (const api of apis) {
   console.log(api)
@@ -343,6 +352,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://www.freepublicapis.com](https://www.freepublicapis.com)
 

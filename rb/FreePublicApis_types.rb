@@ -16,13 +16,13 @@
 # @!attribute [rw] category
 #   @return [String, nil]
 #
-# @!attribute [rw] cor
+# @!attribute [rw] cors
 #   @return [String, nil]
 #
 # @!attribute [rw] description
 #   @return [String, nil]
 #
-# @!attribute [rw] http
+# @!attribute [rw] https
 #   @return [Boolean, nil]
 #
 # @!attribute [rw] id
@@ -42,9 +42,9 @@
 ApI = Struct.new(
   :auth,
   :category,
-  :cor,
+  :cors,
   :description,
-  :http,
+  :https,
   :id,
   :name,
   :status,
@@ -61,13 +61,13 @@ ApI = Struct.new(
 # @!attribute [rw] category
 #   @return [String, nil]
 #
-# @!attribute [rw] cor
+# @!attribute [rw] cors
 #   @return [String, nil]
 #
 # @!attribute [rw] description
 #   @return [String, nil]
 #
-# @!attribute [rw] http
+# @!attribute [rw] https
 #   @return [Boolean, nil]
 #
 # @!attribute [rw] id
@@ -87,9 +87,9 @@ ApI = Struct.new(
 ApIListMatch = Struct.new(
   :auth,
   :category,
-  :cor,
+  :cors,
   :description,
-  :http,
+  :https,
   :id,
   :name,
   :status,

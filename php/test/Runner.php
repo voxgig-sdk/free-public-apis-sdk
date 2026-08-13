@@ -43,8 +43,8 @@ class FreePublicApisTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('FREEPUBLICAPIS_TEST_LIVE');
-        $override = self::getenv('FREEPUBLICAPIS_TEST_OVERRIDE');
+        $live = self::getenv('FREE_PUBLIC_APIS_TEST_LIVE');
+        $override = self::getenv('FREE_PUBLIC_APIS_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class FreePublicApisTestRunner
             }
         }
 
-        $explain = self::getenv('FREEPUBLICAPIS_TEST_EXPLAIN');
+        $explain = self::getenv('FREE_PUBLIC_APIS_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['FREEPUBLICAPIS_TEST_EXPLAIN'] = $explain;
+            $m['FREE_PUBLIC_APIS_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

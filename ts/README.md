@@ -35,7 +35,9 @@ const client = new FreePublicApisSDK()
 
 ### 2. List api records
 
-`list()` resolves to an array of ApI objects — iterate it directly:
+`list()` resolves to an array of ApI ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const apis = await client.ApI().list()
@@ -120,7 +122,8 @@ Create a mock client for unit testing — no server required:
 const client = FreePublicApisSDK.test()
 
 const api = await client.ApI().list()
-// api is a bare entity populated with mock response data
+// api is the entity, populated with mock response data
+// — call api.data() for the record itself
 console.log(api)
 ```
 
@@ -286,9 +289,9 @@ The `prepare()` method returns:
 | --- | --- |
 | `auth` |  |
 | `category` |  |
-| `cor` |  |
+| `cors` |  |
 | `description` |  |
-| `http` |  |
+| `https` |  |
 | `id` |  |
 | `name` |  |
 | `status` |  |
@@ -320,9 +323,9 @@ Create an instance: `const ap_i = client.ApI()`
 | --- | --- | --- |
 | `auth` | `string` |  |
 | `category` | `string` |  |
-| `cor` | `string` |  |
+| `cors` | `string` |  |
 | `description` | `string` |  |
-| `http` | `boolean` |  |
+| `https` | `boolean` |  |
 | `id` | `string` |  |
 | `name` | `string` |  |
 | `status` | `string` |  |

@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# FreePublicApis SDK exists test
 
 import pytest
 from freepublicapis_sdk import FreePublicApisSDK

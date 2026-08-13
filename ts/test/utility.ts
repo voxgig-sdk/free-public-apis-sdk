@@ -62,8 +62,8 @@ function makeCtrl(explain: boolean) {
 // Overrides configuration values with environment variables if available
 function envOverride(m: Record<string, any>) {
   if (
-    'TRUE' === process.env.FREEPUBLICAPIS_TEST_LIVE ||
-    'TRUE' === process.env.FREEPUBLICAPIS_TEST_OVERRIDE
+    'TRUE' === process.env.FREE_PUBLIC_APIS_TEST_LIVE ||
+    'TRUE' === process.env.FREE_PUBLIC_APIS_TEST_OVERRIDE
   ) {
     Object.entries(m).map(n => {
       let envval = process.env[n[0]]
@@ -74,7 +74,7 @@ function envOverride(m: Record<string, any>) {
     })
   }
 
-  m.FREEPUBLICAPIS_TEST_EXPLAIN = process.env.FREEPUBLICAPIS_TEST_EXPLAIN || m.FREEPUBLICAPIS_TEST_EXPLAIN
+  m.FREE_PUBLIC_APIS_TEST_EXPLAIN = process.env.FREE_PUBLIC_APIS_TEST_EXPLAIN || m.FREE_PUBLIC_APIS_TEST_EXPLAIN
 
   return m
 }

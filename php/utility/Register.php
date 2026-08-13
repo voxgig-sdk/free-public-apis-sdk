@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ FreePublicApisUtility::setRegistrar(function (FreePublicApisUtility $u): void {
     $u->prepare_params = [FreePublicApisPrepareParams::class, 'call'];
     $u->prepare_path = [FreePublicApisPreparePath::class, 'call'];
     $u->prepare_query = [FreePublicApisPrepareQuery::class, 'call'];
+    $u->graphql_body = [FreePublicApisGraphql::class, 'body'];
+    $u->graphql_errors = [FreePublicApisGraphql::class, 'errors'];
     $u->result_basic = [FreePublicApisResultBasic::class, 'call'];
     $u->result_body = [FreePublicApisResultBody::class, 'call'];
     $u->result_headers = [FreePublicApisResultHeaders::class, 'call'];

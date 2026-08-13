@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import FreePublicApisControl
-from core.error import FreePublicApisError
-from core.result import FreePublicApisResult
-from core.spec import FreePublicApisSpec
+from projectname_sdk.config import make_config
+from projectname_sdk.features import _make_feature
+from projectname_sdk.core.control import FreePublicApisControl
+from projectname_sdk.core.error import FreePublicApisError
+from projectname_sdk.core.result import FreePublicApisResult
+from projectname_sdk.core.spec import FreePublicApisSpec
 
 
 # True when this SDK was generated with the named feature.

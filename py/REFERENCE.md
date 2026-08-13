@@ -89,9 +89,9 @@ ap_i = client.ApI()
 | --- | --- | --- | --- |
 | `auth` | `str` | No |  |
 | `category` | `str` | No |  |
-| `cor` | `str` | No |  |
+| `cors` | `str` | No |  |
 | `description` | `str` | No |  |
-| `http` | `bool` | No |  |
+| `https` | `bool` | No |  |
 | `id` | `str` | No |  |
 | `name` | `str` | No |  |
 | `status` | `str` | No |  |

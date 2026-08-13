@@ -94,9 +94,9 @@ $ap_i = $client->ApI();
 | --- | --- | --- | --- |
 | `auth` | `string` | No |  |
 | `category` | `string` | No |  |
-| `cor` | `string` | No |  |
+| `cors` | `string` | No |  |
 | `description` | `string` | No |  |
-| `http` | `bool` | No |  |
+| `https` | `bool` | No |  |
 | `id` | `string` | No |  |
 | `name` | `string` | No |  |
 | `status` | `string` | No |  |

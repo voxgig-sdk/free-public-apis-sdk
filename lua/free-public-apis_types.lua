@@ -9,9 +9,9 @@
 ---@class ApI
 ---@field auth? string
 ---@field category? string
----@field cor? string
+---@field cors? string
 ---@field description? string
----@field http? boolean
+---@field https? boolean
 ---@field id? string
 ---@field name? string
 ---@field status? string
@@ -21,9 +21,9 @@
 ---@class ApIListMatch
 ---@field auth? string
 ---@field category? string
----@field cor? string
+---@field cors? string
 ---@field description? string
----@field http? boolean
+---@field https? boolean
 ---@field id? string
 ---@field name? string
 ---@field status? string

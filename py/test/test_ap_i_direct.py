@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from freepublicapis_sdk.utility.voxgig_struct import voxgig_struct as vs
 from freepublicapis_sdk import FreePublicApisSDK
-from core import helpers
+from freepublicapis_sdk.core import helpers
 from test import runner
 
 
@@ -58,11 +58,11 @@ def _ap_i_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "FREEPUBLICAPIS_TEST_AP_I_ENTID": {},
-        "FREEPUBLICAPIS_TEST_LIVE": "FALSE",
+        "FREE_PUBLIC_APIS_TEST_AP_I_ENTID": {},
+        "FREE_PUBLIC_APIS_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("FREEPUBLICAPIS_TEST_LIVE") == "TRUE"
+    live = env.get("FREE_PUBLIC_APIS_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

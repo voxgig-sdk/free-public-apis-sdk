@@ -17,9 +17,9 @@ class ApI
 {
     public ?string $auth = null;
     public ?string $category = null;
-    public ?string $cor = null;
+    public ?string $cors = null;
     public ?string $description = null;
-    public ?bool $http = null;
+    public ?bool $https = null;
     public ?string $id = null;
     public ?string $name = null;
     public ?string $status = null;
@@ -32,9 +32,9 @@ class ApIListMatch
 {
     public ?string $auth = null;
     public ?string $category = null;
-    public ?string $cor = null;
+    public ?string $cors = null;
     public ?string $description = null;
-    public ?bool $http = null;
+    public ?bool $https = null;
     public ?string $id = null;
     public ?string $name = null;
     public ?string $status = null;

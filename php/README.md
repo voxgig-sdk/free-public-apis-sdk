@@ -125,7 +125,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = FreePublicApisSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $api = $client->ApI()->list();
 print_r($api);
 ```
@@ -224,7 +225,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -248,9 +249,9 @@ On error, `ok` is `false` and `$err` contains the error value.
 | --- | --- |
 | `auth` |  |
 | `category` |  |
-| `cor` |  |
+| `cors` |  |
 | `description` |  |
-| `http` |  |
+| `https` |  |
 | `id` |  |
 | `name` |  |
 | `status` |  |
@@ -282,9 +283,9 @@ Create an instance: `$ap_i = $client->ApI();`
 | --- | --- | --- |
 | `auth` | `string` |  |
 | `category` | `string` |  |
-| `cor` | `string` |  |
+| `cors` | `string` |  |
 | `description` | `string` |  |
-| `http` | `bool` |  |
+| `https` | `bool` |  |
 | `id` | `string` |  |
 | `name` | `string` |  |
 | `status` | `string` |  |

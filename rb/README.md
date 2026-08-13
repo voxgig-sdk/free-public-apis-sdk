@@ -119,7 +119,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = FreePublicApisSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 api = client.ApI.list()
 puts api
 ```
@@ -238,9 +239,9 @@ returns a result `Hash` with these keys:
 | --- | --- |
 | `auth` |  |
 | `category` |  |
-| `cor` |  |
+| `cors` |  |
 | `description` |  |
-| `http` |  |
+| `https` |  |
 | `id` |  |
 | `name` |  |
 | `status` |  |
@@ -272,9 +273,9 @@ Create an instance: `ap_i = client.ApI`
 | --- | --- | --- |
 | `auth` | `String` |  |
 | `category` | `String` |  |
-| `cor` | `String` |  |
+| `cors` | `String` |  |
 | `description` | `String` |  |
-| `http` | `Boolean` |  |
+| `https` | `Boolean` |  |
 | `id` | `String` |  |
 | `name` | `String` |  |
 | `status` | `String` |  |

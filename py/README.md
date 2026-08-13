@@ -124,7 +124,8 @@ Create a mock client for unit testing — no server required:
 ```python
 client = FreePublicApisSDK.test()
 
-# Entity ops return the bare record and raise on error.
+# Entity ops return the ENTITY and raises on error;
+# call data_get() for the record.
 api = client.ApI().list()
 # api contains the mock response record
 ```
@@ -220,7 +221,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `dict` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (a `dict` for single-entity
 ops, a `list` for `list`) and raise on error. Wrap calls in
 `try`/`except` to handle failures.
 
@@ -244,9 +245,9 @@ On error, `ok` is `False` and `err` contains the error value.
 | --- | --- |
 | `auth` |  |
 | `category` |  |
-| `cor` |  |
+| `cors` |  |
 | `description` |  |
-| `http` |  |
+| `https` |  |
 | `id` |  |
 | `name` |  |
 | `status` |  |
@@ -278,9 +279,9 @@ Create an instance: `ap_i = client.ApI()`
 | --- | --- | --- |
 | `auth` | `str` |  |
 | `category` | `str` |  |
-| `cor` | `str` |  |
+| `cors` | `str` |  |
 | `description` | `str` |  |
-| `http` | `bool` |  |
+| `https` | `bool` |  |
 | `id` | `str` |  |
 | `name` | `str` |  |
 | `status` | `str` |  |
