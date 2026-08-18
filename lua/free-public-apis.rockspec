@@ -23,6 +23,7 @@ build = {
   modules = {
     ["free-public-apis_sdk"] = "free-public-apis_sdk.lua",
     ["config"] = "config.lua",
+    ["config_shared"] = "config_shared.lua",
     ["features"] = "features.lua",
   }
 }

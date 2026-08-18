@@ -28,7 +28,7 @@ class FreePublicApisSDK
     utility = FreePublicApisUtility.new
     @_utility = utility
 
-    config = FreePublicApisConfig.make_config
+    config = FreePublicApisConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,
