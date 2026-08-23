@@ -87,16 +87,16 @@ ap_i = client.ApI()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `auth` | `str` | No |  |
-| `category` | `str` | No |  |
-| `cors` | `str` | No |  |
-| `description` | `str` | No |  |
-| `https` | `bool` | No |  |
-| `id` | `str` | No |  |
-| `name` | `str` | No |  |
-| `status` | `str` | No |  |
-| `tested` | `str` | No |  |
-| `url` | `str` | No |  |
+| `auth` | `str` | No | Authentication type required |
+| `category` | `str` | No | Category of the API |
+| `cors` | `str` | No | CORS support status |
+| `description` | `str` | No | Description of the API functionality |
+| `https` | `bool` | No | Whether the API supports HTTPS |
+| `id` | `str` | No | Unique identifier for the API |
+| `name` | `str` | No | Name of the API |
+| `status` | `str` | No | Current status of the API |
+| `tested` | `str` | No | Last tested timestamp |
+| `url` | `str` | No | URL of the API |
 
 ### Operations
 

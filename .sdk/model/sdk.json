@@ -36,60 +36,70 @@
               "active": true,
               "name": "auth",
               "req": false,
+              "short": "Authentication type required",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "category",
               "req": false,
+              "short": "Category of the API",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "cors",
               "req": false,
+              "short": "CORS support status",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "description",
               "req": false,
+              "short": "Description of the API functionality",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "https",
               "req": false,
+              "short": "Whether the API supports HTTPS",
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
               "name": "id",
               "req": false,
+              "short": "Unique identifier for the API",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "name",
               "req": false,
+              "short": "Name of the API",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "status",
               "req": false,
+              "short": "Current status of the API",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "tested",
               "req": false,
+              "short": "Last tested timestamp",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "url",
               "req": false,
+              "short": "URL of the API",
               "type": "`$STRING`"
             }
           ],

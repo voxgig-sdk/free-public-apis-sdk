@@ -19,6 +19,9 @@ module FreePublicApisConfig
     {
       "main" => {
         "name" => "FreePublicApis",
+        "slug" => "free-public-apis",
+        "version" => "0.0.1",
+        "target" => "rb",
       },
       "feature" => {
         "test" => {
@@ -41,42 +44,52 @@ module FreePublicApisConfig
           "fields" => [
             {
               "name" => "auth",
+              "short" => "Authentication type required",
               "type" => "`$STRING`",
             },
             {
               "name" => "category",
+              "short" => "Category of the API",
               "type" => "`$STRING`",
             },
             {
               "name" => "cors",
+              "short" => "CORS support status",
               "type" => "`$STRING`",
             },
             {
               "name" => "description",
+              "short" => "Description of the API functionality",
               "type" => "`$STRING`",
             },
             {
               "name" => "https",
+              "short" => "Whether the API supports HTTPS",
               "type" => "`$BOOLEAN`",
             },
             {
               "name" => "id",
+              "short" => "Unique identifier for the API",
               "type" => "`$STRING`",
             },
             {
               "name" => "name",
+              "short" => "Name of the API",
               "type" => "`$STRING`",
             },
             {
               "name" => "status",
+              "short" => "Current status of the API",
               "type" => "`$STRING`",
             },
             {
               "name" => "tested",
+              "short" => "Last tested timestamp",
               "type" => "`$STRING`",
             },
             {
               "name" => "url",
+              "short" => "URL of the API",
               "type" => "`$STRING`",
             },
           ],

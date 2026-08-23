@@ -243,16 +243,16 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `auth` |  |
-| `category` |  |
-| `cors` |  |
-| `description` |  |
-| `https` |  |
-| `id` |  |
-| `name` |  |
-| `status` |  |
-| `tested` |  |
-| `url` |  |
+| `auth` | Authentication type required |
+| `category` | Category of the API |
+| `cors` | CORS support status |
+| `description` | Description of the API functionality |
+| `https` | Whether the API supports HTTPS |
+| `id` | Unique identifier for the API |
+| `name` | Name of the API |
+| `status` | Current status of the API |
+| `tested` | Last tested timestamp |
+| `url` | URL of the API |
 
 Operations: List.
 
@@ -277,16 +277,16 @@ Create an instance: `ap_i = client.ApI()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `auth` | `str` |  |
-| `category` | `str` |  |
-| `cors` | `str` |  |
-| `description` | `str` |  |
-| `https` | `bool` |  |
-| `id` | `str` |  |
-| `name` | `str` |  |
-| `status` | `str` |  |
-| `tested` | `str` |  |
-| `url` | `str` |  |
+| `auth` | `str` | Authentication type required |
+| `category` | `str` | Category of the API |
+| `cors` | `str` | CORS support status |
+| `description` | `str` | Description of the API functionality |
+| `https` | `bool` | Whether the API supports HTTPS |
+| `id` | `str` | Unique identifier for the API |
+| `name` | `str` | Name of the API |
+| `status` | `str` | Current status of the API |
+| `tested` | `str` | Last tested timestamp |
+| `url` | `str` | URL of the API |
 
 #### Example: List
 

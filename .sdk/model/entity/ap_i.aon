@@ -8,51 +8,61 @@ main: kit: entity: ap_i: {
     {
       name: "auth"
       req: false
+      short: "Authentication type required"
       type: "`$STRING`"
     }
     {
       name: "category"
       req: false
+      short: "Category of the API"
       type: "`$STRING`"
     }
     {
       name: "cors"
       req: false
+      short: "CORS support status"
       type: "`$STRING`"
     }
     {
       name: "description"
       req: false
+      short: "Description of the API functionality"
       type: "`$STRING`"
     }
     {
       name: "https"
       req: false
+      short: "Whether the API supports HTTPS"
       type: "`$BOOLEAN`"
     }
     {
       name: "id"
       req: false
+      short: "Unique identifier for the API"
       type: "`$STRING`"
     }
     {
       name: "name"
       req: false
+      short: "Name of the API"
       type: "`$STRING`"
     }
     {
       name: "status"
       req: false
+      short: "Current status of the API"
       type: "`$STRING`"
     }
     {
       name: "tested"
       req: false
+      short: "Last tested timestamp"
       type: "`$STRING`"
     }
     {
       name: "url"
       req: false
+      short: "URL of the API"
       type: "`$STRING`"
     }
   ]

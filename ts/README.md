@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -287,16 +287,16 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `auth` |  |
-| `category` |  |
-| `cors` |  |
-| `description` |  |
-| `https` |  |
-| `id` |  |
-| `name` |  |
-| `status` |  |
-| `tested` |  |
-| `url` |  |
+| `auth` | Authentication type required |
+| `category` | Category of the API |
+| `cors` | CORS support status |
+| `description` | Description of the API functionality |
+| `https` | Whether the API supports HTTPS |
+| `id` | Unique identifier for the API |
+| `name` | Name of the API |
+| `status` | Current status of the API |
+| `tested` | Last tested timestamp |
+| `url` | URL of the API |
 
 Operations: list.
 
@@ -321,16 +321,16 @@ Create an instance: `const ap_i = client.ApI()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `auth` | `string` |  |
-| `category` | `string` |  |
-| `cors` | `string` |  |
-| `description` | `string` |  |
-| `https` | `boolean` |  |
-| `id` | `string` |  |
-| `name` | `string` |  |
-| `status` | `string` |  |
-| `tested` | `string` |  |
-| `url` | `string` |  |
+| `auth` | `string` | Authentication type required |
+| `category` | `string` | Category of the API |
+| `cors` | `string` | CORS support status |
+| `description` | `string` | Description of the API functionality |
+| `https` | `boolean` | Whether the API supports HTTPS |
+| `id` | `string` | Unique identifier for the API |
+| `name` | `string` | Name of the API |
+| `status` | `string` | Current status of the API |
+| `tested` | `string` | Last tested timestamp |
+| `url` | `string` | URL of the API |
 
 #### Example: List
 

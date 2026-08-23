@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "FreePublicApis",
+			"slug": "free-public-apis",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -33,42 +36,52 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "auth",
+						"short": "Authentication type required",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "category",
+						"short": "Category of the API",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "cors",
+						"short": "CORS support status",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "description",
+						"short": "Description of the API functionality",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "https",
+						"short": "Whether the API supports HTTPS",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "id",
+						"short": "Unique identifier for the API",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "name",
+						"short": "Name of the API",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "status",
+						"short": "Current status of the API",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "tested",
+						"short": "Last tested timestamp",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "url",
+						"short": "URL of the API",
 						"type": "`$STRING`",
 					},
 				},

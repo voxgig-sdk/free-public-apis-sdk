@@ -90,16 +90,16 @@ local ap_i = client:ApI(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `auth` | `string` | No |  |
-| `category` | `string` | No |  |
-| `cors` | `string` | No |  |
-| `description` | `string` | No |  |
-| `https` | `boolean` | No |  |
-| `id` | `string` | No |  |
-| `name` | `string` | No |  |
-| `status` | `string` | No |  |
-| `tested` | `string` | No |  |
-| `url` | `string` | No |  |
+| `auth` | `string` | No | Authentication type required |
+| `category` | `string` | No | Category of the API |
+| `cors` | `string` | No | CORS support status |
+| `description` | `string` | No | Description of the API functionality |
+| `https` | `boolean` | No | Whether the API supports HTTPS |
+| `id` | `string` | No | Unique identifier for the API |
+| `name` | `string` | No | Name of the API |
+| `status` | `string` | No | Current status of the API |
+| `tested` | `string` | No | Last tested timestamp |
+| `url` | `string` | No | URL of the API |
 
 ### Operations
 

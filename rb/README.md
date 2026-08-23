@@ -237,16 +237,16 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `auth` |  |
-| `category` |  |
-| `cors` |  |
-| `description` |  |
-| `https` |  |
-| `id` |  |
-| `name` |  |
-| `status` |  |
-| `tested` |  |
-| `url` |  |
+| `auth` | Authentication type required |
+| `category` | Category of the API |
+| `cors` | CORS support status |
+| `description` | Description of the API functionality |
+| `https` | Whether the API supports HTTPS |
+| `id` | Unique identifier for the API |
+| `name` | Name of the API |
+| `status` | Current status of the API |
+| `tested` | Last tested timestamp |
+| `url` | URL of the API |
 
 Operations: List.
 
@@ -271,16 +271,16 @@ Create an instance: `ap_i = client.ApI`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `auth` | `String` |  |
-| `category` | `String` |  |
-| `cors` | `String` |  |
-| `description` | `String` |  |
-| `https` | `Boolean` |  |
-| `id` | `String` |  |
-| `name` | `String` |  |
-| `status` | `String` |  |
-| `tested` | `String` |  |
-| `url` | `String` |  |
+| `auth` | `String` | Authentication type required |
+| `category` | `String` | Category of the API |
+| `cors` | `String` | CORS support status |
+| `description` | `String` | Description of the API functionality |
+| `https` | `Boolean` | Whether the API supports HTTPS |
+| `id` | `String` | Unique identifier for the API |
+| `name` | `String` | Name of the API |
+| `status` | `String` | Current status of the API |
+| `tested` | `String` | Last tested timestamp |
+| `url` | `String` | URL of the API |
 
 #### Example: List
 

@@ -6,7 +6,7 @@ The Golang SDK for the FreePublicApis API — an entity-oriented client using st
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.ApI(nil)` — each with the same small set of operations (`List`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -260,16 +260,16 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"auth"` |  |
-| `"category"` |  |
-| `"cors"` |  |
-| `"description"` |  |
-| `"https"` |  |
-| `"id"` |  |
-| `"name"` |  |
-| `"status"` |  |
-| `"tested"` |  |
-| `"url"` |  |
+| `"auth"` | Authentication type required |
+| `"category"` | Category of the API |
+| `"cors"` | CORS support status |
+| `"description"` | Description of the API functionality |
+| `"https"` | Whether the API supports HTTPS |
+| `"id"` | Unique identifier for the API |
+| `"name"` | Name of the API |
+| `"status"` | Current status of the API |
+| `"tested"` | Last tested timestamp |
+| `"url"` | URL of the API |
 
 Operations: List.
 
@@ -294,16 +294,16 @@ Create an instance: `apI := client.ApI(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `auth` | `string` |  |
-| `category` | `string` |  |
-| `cors` | `string` |  |
-| `description` | `string` |  |
-| `https` | `bool` |  |
-| `id` | `string` |  |
-| `name` | `string` |  |
-| `status` | `string` |  |
-| `tested` | `string` |  |
-| `url` | `string` |  |
+| `auth` | `string` | Authentication type required |
+| `category` | `string` | Category of the API |
+| `cors` | `string` | CORS support status |
+| `description` | `string` | Description of the API functionality |
+| `https` | `bool` | Whether the API supports HTTPS |
+| `id` | `string` | Unique identifier for the API |
+| `name` | `string` | Name of the API |
+| `status` | `string` | Current status of the API |
+| `tested` | `string` | Last tested timestamp |
+| `url` | `string` | URL of the API |
 
 #### Example: List
 

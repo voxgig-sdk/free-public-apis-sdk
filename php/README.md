@@ -247,16 +247,16 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `auth` |  |
-| `category` |  |
-| `cors` |  |
-| `description` |  |
-| `https` |  |
-| `id` |  |
-| `name` |  |
-| `status` |  |
-| `tested` |  |
-| `url` |  |
+| `auth` | Authentication type required |
+| `category` | Category of the API |
+| `cors` | CORS support status |
+| `description` | Description of the API functionality |
+| `https` | Whether the API supports HTTPS |
+| `id` | Unique identifier for the API |
+| `name` | Name of the API |
+| `status` | Current status of the API |
+| `tested` | Last tested timestamp |
+| `url` | URL of the API |
 
 Operations: List.
 
@@ -281,16 +281,16 @@ Create an instance: `$ap_i = $client->ApI();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `auth` | `string` |  |
-| `category` | `string` |  |
-| `cors` | `string` |  |
-| `description` | `string` |  |
-| `https` | `bool` |  |
-| `id` | `string` |  |
-| `name` | `string` |  |
-| `status` | `string` |  |
-| `tested` | `string` |  |
-| `url` | `string` |  |
+| `auth` | `string` | Authentication type required |
+| `category` | `string` | Category of the API |
+| `cors` | `string` | CORS support status |
+| `description` | `string` | Description of the API functionality |
+| `https` | `bool` | Whether the API supports HTTPS |
+| `id` | `string` | Unique identifier for the API |
+| `name` | `string` | Name of the API |
+| `status` | `string` | Current status of the API |
+| `tested` | `string` | Last tested timestamp |
+| `url` | `string` | URL of the API |
 
 #### Example: List
 
