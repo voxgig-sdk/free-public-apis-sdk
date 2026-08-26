@@ -28,6 +28,7 @@ module FreePublicApisConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
