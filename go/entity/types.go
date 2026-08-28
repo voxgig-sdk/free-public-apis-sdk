@@ -28,16 +28,8 @@ type ApI struct {
 
 // ApIListMatch is the typed request payload for ApI.ListTyped.
 type ApIListMatch struct {
-	Auth *string `json:"auth,omitempty"`
 	Category *string `json:"category,omitempty"`
-	Cors *string `json:"cors,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Https *bool `json:"https,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Status *string `json:"status,omitempty"`
-	Tested *string `json:"tested,omitempty"`
-	Url *string `json:"url,omitempty"`
+	Limit *int `json:"limit,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

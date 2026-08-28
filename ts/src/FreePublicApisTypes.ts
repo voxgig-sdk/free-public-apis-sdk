@@ -19,15 +19,7 @@ export interface ApI {
 }
 
 export interface ApIListMatch {
-  auth?: string
   category?: string
-  cors?: string
-  description?: string
-  https?: boolean
-  id?: string
-  name?: string
-  status?: string
-  tested?: string
-  url?: string
+  limit?: number
 }
 

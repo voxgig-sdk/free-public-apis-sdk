@@ -19,16 +19,8 @@
 ---@field url? string
 
 ---@class ApIListMatch
----@field auth? string
 ---@field category? string
----@field cors? string
----@field description? string
----@field https? boolean
----@field id? string
----@field name? string
----@field status? string
----@field tested? string
----@field url? string
+---@field limit? number
 
 local M = {}
 

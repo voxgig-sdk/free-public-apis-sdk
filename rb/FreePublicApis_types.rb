@@ -55,46 +55,14 @@ ApI = Struct.new(
 
 # Request payload for ApI#list.
 #
-# @!attribute [rw] auth
-#   @return [String, nil]
-#
 # @!attribute [rw] category
 #   @return [String, nil]
 #
-# @!attribute [rw] cors
-#   @return [String, nil]
-#
-# @!attribute [rw] description
-#   @return [String, nil]
-#
-# @!attribute [rw] https
-#   @return [Boolean, nil]
-#
-# @!attribute [rw] id
-#   @return [String, nil]
-#
-# @!attribute [rw] name
-#   @return [String, nil]
-#
-# @!attribute [rw] status
-#   @return [String, nil]
-#
-# @!attribute [rw] tested
-#   @return [String, nil]
-#
-# @!attribute [rw] url
-#   @return [String, nil]
+# @!attribute [rw] limit
+#   @return [Integer, nil]
 ApIListMatch = Struct.new(
-  :auth,
   :category,
-  :cors,
-  :description,
-  :https,
-  :id,
-  :name,
-  :status,
-  :tested,
-  :url,
+  :limit,
   keyword_init: true
 )
 

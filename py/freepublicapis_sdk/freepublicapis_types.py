@@ -30,13 +30,5 @@ class ApI(TypedDict, total=False):
 
 
 class ApIListMatch(TypedDict, total=False):
-    auth: str
     category: str
-    cors: str
-    description: str
-    https: bool
-    id: str
-    name: str
-    status: str
-    tested: str
-    url: str
+    limit: int
