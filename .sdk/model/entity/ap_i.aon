@@ -54,12 +54,14 @@ main: kit: entity: ap_i: {
       type: "`$STRING`"
     }
     {
+      format: "date-time"
       name: "tested"
       req: false
       short: "Last tested timestamp"
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "url"
       req: false
       short: "URL of the API"
@@ -98,8 +100,10 @@ main: kit: entity: ap_i: {
           }
           method: "GET"
           orig: "/api.php"
-          parts: [
-            "api.php"
+          segments: [
+            {
+              lit: "api.php"
+            }
           ]
           select: {
             exist: [

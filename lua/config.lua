@@ -72,15 +72,21 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "date-time",
             ["name"] = "tested",
             ["short"] = "Last tested timestamp",
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "uri",
             ["name"] = "url",
             ["short"] = "URL of the API",
             ["type"] = "`$STRING`",
           },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
         },
         ["name"] = "ap_i",
         ["op"] = {
@@ -108,8 +114,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api.php",
-                ["parts"] = {
-                  "api.php",
+                ["segments"] = {
+                  {
+                    ["lit"] = "api.php",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -120,6 +128,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.apis`",
+                },
+                ["parts"] = {
+                  "api.php",
                 },
               },
             },
