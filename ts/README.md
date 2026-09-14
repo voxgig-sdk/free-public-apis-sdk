@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { FreePublicApisSDK } from '@voxgig-sdk/free-public-apis'
+import { FreePublicApisSDK } from '@voxgig-sdk/free-public-apis-sdk'
 
 const client = new FreePublicApisSDK()
 ```
@@ -421,7 +421,7 @@ free-public-apis/
 Import the SDK from the package root:
 
 ```ts
-import { FreePublicApisSDK } from '@voxgig-sdk/free-public-apis'
+import { FreePublicApisSDK } from '@voxgig-sdk/free-public-apis-sdk'
 ```
 
 ### Entity state

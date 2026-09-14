@@ -105,7 +105,7 @@ local results, err = client:ApI():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/free-public-apis` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-public-apis-sdk/releases) |
+| TypeScript | `@voxgig-sdk/free-public-apis-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-public-apis-sdk/releases) |
 | Python | `voxgig-sdk-free-public-apis` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-public-apis-sdk/releases) |
 | PHP | `voxgig-sdk/free-public-apis` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-public-apis-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/free-public-apis-sdk/go` | `go get github.com/voxgig-sdk/free-public-apis-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:ApI():list()
 ### TypeScript
 
 ```ts
-import { FreePublicApisSDK } from '@voxgig-sdk/free-public-apis'
+import { FreePublicApisSDK } from '@voxgig-sdk/free-public-apis-sdk'
 
 const client = new FreePublicApisSDK()
 
