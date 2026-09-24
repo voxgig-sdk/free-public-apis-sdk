@@ -4,7 +4,7 @@
 
 The PHP SDK for the FreePublicApis API — an entity-oriented client using PHP conventions.
 
-The SDK exposes the API as capitalised, semantic **Entities** — for example `$client->ApI()` — with named operations (`list`) instead of raw URL paths and query strings. Working with resources and verbs keeps call sites self-describing and reduces cognitive load.
+The SDK exposes the API as capitalised, semantic **Entities** — for example `$client->Api()` — with named operations (`list`) instead of raw URL paths and query strings. Working with resources and verbs keeps call sites self-describing and reduces cognitive load.
 
 > Other languages, the CLI, and MCP server live alongside this one — see
 > the [top-level README](../README.md).
@@ -36,7 +36,7 @@ $client = new FreePublicApisSDK();
 ```php
 try {
     // list() returns entity instances; data_get() reads each record.
-    $apis = $client->ApI()->list();
+    $apis = $client->Api()->list();
     foreach ($apis as $record) {
         $item = $record->data_get();
         echo $item["id"] . " " . $item["auth"] . "\n";
@@ -54,7 +54,7 @@ Entity operations throw a `\Throwable` on failure, so wrap them in
 
 ```php
 try {
-    $apis = $client->ApI()->list();
+    $apis = $client->Api()->list();
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
@@ -128,7 +128,7 @@ $client = FreePublicApisSDK::test();
 
 // list() returns entity instances (throws on error);
 // call data_get() for the mock record.
-$api = $client->ApI()->list();
+$api = $client->Api()->list();
 print_r(array_map(fn($item) => $item->data_get(), $api));
 ```
 
@@ -208,7 +208,7 @@ Creates a test-mode client with mock transport. Both arguments may be `null`.
 | `get_utility` | `(): Utility` | Copy of the SDK utility object. |
 | `prepare` | `(array $fetchargs): array` | Build an HTTP request definition without sending. |
 | `direct` | `(array $fetchargs): array` | Build and send an HTTP request. |
-| `ApI` | `($data): ApIEntity` | Create an ApI entity instance. |
+| `Api` | `($data): ApiEntity` | Create an Api entity instance. |
 
 ### Entity interface
 
@@ -244,7 +244,7 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 ### Entities
 
-#### ApI
+#### Api
 
 | Field | Description |
 | --- | --- |
@@ -268,9 +268,9 @@ API path: `/api.php`
 ## Entities
 
 
-### ApI
+### Api
 
-Create an instance: `$ap_i = $client->ApI();`
+Create an instance: `$api = $client->Api();`
 
 #### Operations
 
@@ -296,8 +296,8 @@ Create an instance: `$ap_i = $client->ApI();`
 #### Example: List
 
 ```php
-// list() returns an array of ApI records (throws on error).
-$ap_is = $client->ApI()->list();
+// list() returns an array of Api records (throws on error).
+$apis = $client->Api()->list();
 ```
 
 ## Features
@@ -462,7 +462,7 @@ Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$api = $client->ApI();
+$api = $client->Api();
 $api->list();
 
 // $api->data_get() now returns the api data from the last list

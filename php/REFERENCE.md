@@ -41,9 +41,9 @@ $client = FreePublicApisSDK::test();
 
 ### Instance Methods
 
-#### `ApI($data = null)`
+#### `Api($data = null)`
 
-Create a new `ApIEntity` instance. Pass `null` for no initial data.
+Create a new `ApiEntity` instance. Pass `null` for no initial data.
 
 #### `options_map(): array`
 
@@ -82,10 +82,10 @@ Prepare a fetch definition without sending the request. Returns the
 
 ---
 
-## ApIEntity
+## ApiEntity
 
 ```php
-$ap_i = $client->ApI();
+$api = $client->Api();
 ```
 
 ### Fields
@@ -110,7 +110,7 @@ $ap_i = $client->ApI();
 List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->ApI()->list();
+$results = $client->Api()->list();
 ```
 
 ### Common Methods
@@ -131,9 +131,9 @@ Get the entity match criteria.
 
 Set the entity match criteria.
 
-#### `make(): ApIEntity`
+#### `make(): ApiEntity`
 
-Create a new `ApIEntity` instance with the same client and
+Create a new `ApiEntity` instance with the same client and
 options.
 
 #### `get_name(): string`

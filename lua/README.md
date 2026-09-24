@@ -4,7 +4,7 @@
 
 The Lua SDK for the FreePublicApis API — an entity-oriented client using Lua conventions.
 
-It exposes the API as capitalised, semantic **Entities** — e.g. `client:ApI()` — each with the same small set of operations (`list`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
+It exposes the API as capitalised, semantic **Entities** — e.g. `client:Api()` — each with the same small set of operations (`list`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
 > Other languages, the CLI, and MCP server live alongside this one — see
 > the [top-level README](../README.md).
@@ -39,11 +39,11 @@ Entity operations return `(value, err)`. For `list`, `value` is the
 array of records itself — iterate it directly (there is no wrapper).
 
 ```lua
-local apis, err = client:ApI():list()
+local apis, err = client:Api():list()
 if err then error(err) end
 
 for _, item in ipairs(apis) do
-  print(item["id"], item["auth"])
+  print(item["id"])
 end
 ```
 
@@ -54,7 +54,7 @@ Entity operations return `(value, err)`. Check `err` before using
 the value:
 
 ```lua
-local apis, err = client:ApI():list()
+local apis, err = client:Api():list()
 if err then error(err) end
 ```
 
@@ -112,7 +112,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:ApI():list()
+local result, err = client:Api():list()
 -- result is the returned data; err is set on failure
 ```
 
@@ -191,7 +191,7 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `get_utility` | `() -> Utility` | Copy of the SDK utility object. |
 | `prepare` | `(fetchargs) -> table, err` | Build an HTTP request definition without sending. |
 | `direct` | `(fetchargs) -> table, err` | Build and send an HTTP request. |
-| `ApI` | `(data) -> ApIEntity` | Create an ApI entity instance. |
+| `Api` | `(data) -> ApiEntity` | Create an Api entity instance. |
 
 ### Entity interface
 
@@ -218,16 +218,16 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local ap_i, err = client:ApI():list()
+    local api, err = client:Api():list()
     if err then error(err) end
-    -- ap_i is the record list
+    -- api is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
 
 ### Entities
 
-#### ApI
+#### Api
 
 | Field | Description |
 | --- | --- |
@@ -251,9 +251,9 @@ API path: `/api.php`
 ## Entities
 
 
-### ApI
+### Api
 
-Create an instance: `local ap_i = client:ApI(nil)`
+Create an instance: `local api = client:Api(nil)`
 
 #### Operations
 
@@ -279,7 +279,7 @@ Create an instance: `local ap_i = client:ApI(nil)`
 #### Example: List
 
 ```lua
-local ap_is, err = client:ApI():list()
+local apis, err = client:Api():list()
 ```
 
 ## Features
@@ -444,7 +444,7 @@ Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local api = client:ApI()
+local api = client:Api()
 api:list()
 
 -- api:data_get() now returns the api data from the last list

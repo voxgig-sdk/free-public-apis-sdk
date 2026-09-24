@@ -48,9 +48,9 @@ const client = FreePublicApisSDK.test()
 
 ### Instance Methods
 
-#### `ApI(data?: object)`
+#### `Api(data?: object)`
 
-Create a new `ApI` entity instance.
+Create a new `Api` entity instance.
 
 **Parameters:**
 
@@ -58,7 +58,7 @@ Create a new `ApI` entity instance.
 | --- | --- | --- |
 | `data` | `object` | Initial entity data. |
 
-**Returns:** `ApIEntity` instance.
+**Returns:** `ApiEntity` instance.
 
 #### `options()`
 
@@ -106,10 +106,10 @@ Alias for `FreePublicApisSDK.test()`.
 
 ---
 
-## ApIEntity
+## ApiEntity
 
 ```ts
-const ap_i = client.ApI()
+const api = client.Api()
 ```
 
 ### Fields
@@ -134,7 +134,7 @@ const ap_i = client.ApI()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.ApI().list()
+const results = await client.Api().list()
 ```
 
 ### Common Methods
@@ -151,7 +151,7 @@ Get or set the entity match criteria. Works the same as `data()`.
 
 #### `make()`
 
-Create a new `ApIEntity` instance with the same client and
+Create a new `ApiEntity` instance with the same client and
 options.
 
 #### `client()`

@@ -16,12 +16,6 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS: Record<string, any[]> = {
   
 }
@@ -32,7 +26,6 @@ class Config {
   makeFeature(this: any, fn: string) {
     const fc = FEATURE_CLASS[fn]
     const fi = new fc()
-    // TODO: errors etc
     return fi
   }
 
@@ -127,7 +120,7 @@ class Config {
 
     entity: {
       
-        ap_i: {
+        api: {
         },
   
     }
@@ -135,88 +128,82 @@ class Config {
 
 
   entity = {
-    "ap_i": {
+    "api": {
       "fields": [
         {
           "name": "auth",
-          "short": "Authentication type required",
-          "type": "`$STRING`"
+          "title": "Auth",
+          "type": "`$STRING`",
+          "short": "Authentication type required"
         },
         {
           "name": "category",
-          "short": "Category of the API",
-          "type": "`$STRING`"
+          "title": "Category",
+          "type": "`$STRING`",
+          "short": "Category of the API"
         },
         {
           "name": "cors",
-          "short": "CORS support status",
-          "type": "`$STRING`"
+          "title": "Cors",
+          "type": "`$STRING`",
+          "short": "CORS support status"
         },
         {
           "name": "description",
-          "short": "Description of the API functionality",
-          "type": "`$STRING`"
+          "title": "Description",
+          "type": "`$STRING`",
+          "short": "Description of the API functionality"
         },
         {
           "name": "https",
-          "short": "Whether the API supports HTTPS",
-          "type": "`$BOOLEAN`"
+          "title": "Https",
+          "type": "`$BOOLEAN`",
+          "short": "Whether the API supports HTTPS"
         },
         {
           "name": "id",
-          "short": "Unique identifier for the API",
-          "type": "`$STRING`"
+          "title": "Id",
+          "type": "`$STRING`",
+          "short": "Unique identifier for the API"
         },
         {
           "name": "name",
-          "short": "Name of the API",
-          "type": "`$STRING`"
+          "title": "Name",
+          "type": "`$STRING`",
+          "short": "Name of the API"
         },
         {
           "name": "status",
-          "short": "Current status of the API",
-          "type": "`$STRING`"
+          "title": "Status",
+          "type": "`$STRING`",
+          "short": "Current status of the API"
         },
         {
-          "format": "date-time",
           "name": "tested",
+          "title": "Tested",
+          "type": "`$STRING`",
           "short": "Last tested timestamp",
-          "type": "`$STRING`"
+          "format": "date-time"
         },
         {
-          "format": "uri",
           "name": "url",
+          "title": "Url",
+          "type": "`$STRING`",
           "short": "URL of the API",
-          "type": "`$STRING`"
+          "format": "uri"
         }
       ],
       "id": {
         "field": "id",
         "name": "id"
       },
-      "name": "ap_i",
+      "name": "api",
       "op": {
         "list": {
           "input": "data",
           "name": "list",
           "points": [
             {
-              "args": {
-                "query": [
-                  {
-                    "kind": "query",
-                    "name": "category",
-                    "orig": "category",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "kind": "query",
-                    "name": "limit",
-                    "orig": "limit",
-                    "type": "`$INTEGER`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/api.php",
@@ -225,19 +212,36 @@ class Config {
                   "lit": "api.php"
                 }
               ],
+              "parts": [
+                "api.php"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body.apis`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "category",
+                    "orig": "category",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "limit",
+                    "orig": "limit",
+                    "type": "`$INTEGER`",
+                    "kind": "query"
+                  }
+                ]
+              },
               "select": {
                 "exist": [
                   "category",
                   "limit"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body.apis`"
-              },
-              "parts": [
-                "api.php"
-              ]
+              }
             }
           ]
         }

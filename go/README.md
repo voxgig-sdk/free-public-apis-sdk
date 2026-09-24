@@ -4,7 +4,7 @@
 
 The Golang SDK for the FreePublicApis API — an entity-oriented client using standard Go conventions. No generics required; data flows as `map[string]any`.
 
-It exposes the API as capitalised, semantic **Entities** — e.g. `client.ApI(nil)` — each with the same small set of operations (`List`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
+It exposes the API as capitalised, semantic **Entities** — e.g. `client.Api(nil)` — each with the same small set of operations (`List`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
 > Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
@@ -50,12 +50,12 @@ import (
 func main() {
     client := sdk.New()
 
-    // List apI records — the value is the array of records itself.
-    apIs, err := client.ApI(nil).List(nil, nil)
+    // List api records — the value is the array of records itself.
+    apis, err := client.Api(nil).List(nil, nil)
     if err != nil {
         panic(err)
     }
-    for _, item := range apIs.([]any) {
+    for _, item := range apis.([]any) {
         fmt.Println(item)
     }
 }
@@ -68,7 +68,7 @@ Every entity operation returns `(value, error)`. Check `err` before
 using the value — there is no exception to catch:
 
 ```go
-apis, err := client.ApI(nil).List(nil, nil)
+apis, err := client.Api(nil).List(nil, nil)
 if err != nil {
     // handle err
     return
@@ -137,13 +137,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-apI, err := client.ApI(nil).List(
+api, err := client.Api(nil).List(
     nil, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(apI) // the returned mock data
+fmt.Println(api) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -220,7 +220,7 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `GetUtility` | `() *Utility` | Copy of the SDK utility object. |
 | `Prepare` | `(fetchargs map[string]any) (map[string]any, error)` | Build an HTTP request definition without sending. |
 | `Direct` | `(fetchargs map[string]any) (map[string]any, error)` | Build and send an HTTP request. |
-| `ApI` | `(data map[string]any) FreePublicApisEntity` | Create an ApI entity instance. |
+| `Api` | `(data map[string]any) FreePublicApisEntity` | Create an Api entity instance. |
 
 ### Entity interface (FreePublicApisEntity)
 
@@ -247,16 +247,16 @@ Check `err` first, then use the value directly (or the typed
 `...Typed` variants, which return the entity's model struct and a typed
 slice):
 
-    apI, err := client.ApI(nil).List(map[string]any{/* fields */}, nil)
+    api, err := client.Api(nil).List(map[string]any{/* fields */}, nil)
     if err != nil { /* handle */ }
-    // apI is the returned record
+    // api is the returned record
 
 Only `Direct()` returns a response envelope — a `map[string]any` with
 `"ok"`, `"status"`, `"headers"`, and `"data"` keys.
 
 ### Entities
 
-#### ApI
+#### Api
 
 | Field | Description |
 | --- | --- |
@@ -280,9 +280,9 @@ API path: `/api.php`
 ## Entities
 
 
-### ApI
+### Api
 
-Create an instance: `apI := client.ApI(nil)`
+Create an instance: `api := client.Api(nil)`
 
 #### Operations
 
@@ -308,11 +308,11 @@ Create an instance: `apI := client.ApI(nil)`
 #### Example: List
 
 ```go
-apIs, err := client.ApI(nil).List(nil, nil)
+apis, err := client.Api(nil).List(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(apIs) // the array of records
+fmt.Println(apis) // the array of records
 ```
 
 ## Features
@@ -473,7 +473,7 @@ Entity instances are stateful. After a successful `List`, the entity
 stores the returned data and match criteria internally.
 
 ```go
-api := client.ApI(nil)
+api := client.Api(nil)
 api.List(nil, nil)
 
 // api.Data() now returns the api data from the last list

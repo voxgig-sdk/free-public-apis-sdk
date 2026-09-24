@@ -1,7 +1,7 @@
 // Typed models for the FreePublicApis SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -12,22 +12,12 @@ import (
 	"github.com/voxgig-sdk/free-public-apis-sdk/go/core"
 )
 
-// ApI is the typed data model for the ap_i entity.
-type ApI struct {
-	Auth *string `json:"auth,omitempty"`
-	Category *string `json:"category,omitempty"`
-	Cors *string `json:"cors,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Https *bool `json:"https,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Status *string `json:"status,omitempty"`
-	Tested *string `json:"tested,omitempty"`
-	Url *string `json:"url,omitempty"`
+// Api is the typed data model for the api entity.
+type Api struct {
 }
 
-// ApIListMatch is the typed request payload for ApI.ListTyped.
-type ApIListMatch struct {
+// ApiListMatch is the typed request payload for Api.ListTyped.
+type ApiListMatch struct {
 	Category *string `json:"category,omitempty"`
 	Limit *int `json:"limit,omitempty"`
 }

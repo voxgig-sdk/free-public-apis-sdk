@@ -1,4 +1,4 @@
-export interface ApI {
+export interface Api {
     auth?: string;
     category?: string;
     cors?: string;
@@ -10,7 +10,7 @@ export interface ApI {
     tested?: string;
     url?: string;
 }
-export interface ApIListMatch {
+export interface ApiListMatch {
     category?: string;
     limit?: number;
 }

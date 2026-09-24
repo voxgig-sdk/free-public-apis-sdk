@@ -4,7 +4,7 @@
 
 The Ruby SDK for the FreePublicApis API — an entity-oriented client using idiomatic Ruby conventions.
 
-The SDK exposes the API as capitalised, semantic **Entities** — for example `client.ApI` — with named operations (`list`) instead of raw URL paths and query strings. Working with resources and verbs keeps call sites self-describing and reduces cognitive load.
+The SDK exposes the API as capitalised, semantic **Entities** — for example `client.Api` — with named operations (`list`) instead of raw URL paths and query strings. Working with resources and verbs keeps call sites self-describing and reduces cognitive load.
 
 > Other languages, the CLI, and MCP server live alongside this one — see
 > the [top-level README](../README.md).
@@ -34,8 +34,8 @@ client = FreePublicApisSDK.new
 
 ```ruby
 begin
-  # list returns an Array of ApI records — iterate directly.
-  apis = client.ApI.list
+  # list returns an Array of Api records — iterate directly.
+  apis = client.Api.list
   apis.each do |item|
     puts "#{item["id"]} #{item["auth"]}"
   end
@@ -51,7 +51,7 @@ Entity operations raise on failure, so rescue them:
 
 ```ruby
 begin
-  apis = client.ApI.list()
+  apis = client.Api.list()
 rescue => err
   warn "list failed: #{err}"
 end
@@ -121,7 +121,7 @@ client = FreePublicApisSDK.test
 
 # Entity ops return the ENTITY (raises on error);
 # call data_get for the mock record.
-api = client.ApI.list()
+api = client.Api.list()
 puts api
 ```
 
@@ -198,7 +198,7 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `get_utility` | `() -> Utility` | Copy of the SDK utility object. |
 | `prepare` | `(fetchargs) -> Hash` | Build an HTTP request definition without sending. Raises on error. |
 | `direct` | `(fetchargs) -> Hash` | Build and send an HTTP request. Returns a result hash (`result["ok"]`); does not raise. |
-| `ApI` | `(data) -> ApIEntity` | Create an ApI entity instance. |
+| `Api` | `(data) -> ApiEntity` | Create an Api entity instance. |
 
 ### Entity interface
 
@@ -233,7 +233,7 @@ returns a result `Hash` with these keys:
 
 ### Entities
 
-#### ApI
+#### Api
 
 | Field | Description |
 | --- | --- |
@@ -257,9 +257,9 @@ API path: `/api.php`
 ## Entities
 
 
-### ApI
+### Api
 
-Create an instance: `ap_i = client.ApI`
+Create an instance: `api = client.Api`
 
 #### Operations
 
@@ -285,8 +285,8 @@ Create an instance: `ap_i = client.ApI`
 #### Example: List
 
 ```ruby
-# list returns an Array of ApI records (raises on error).
-ap_is = client.ApI.list
+# list returns an Array of Api records (raises on error).
+apis = client.Api.list
 ```
 
 ## Features
@@ -451,7 +451,7 @@ Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-api = client.ApI
+api = client.Api
 api.list()
 
 # api.data_get now returns the api data from the last list

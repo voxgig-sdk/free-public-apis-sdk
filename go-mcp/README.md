@@ -27,11 +27,11 @@ Tool-call arguments (what an agent sends):
 
 ```jsonc
 // free-public-apis_list: first page of records
-{ "entity": "ap_i" }
-{ "entity": "ap_i", "query": { } }
+{ "entity": "api" }
+{ "entity": "api", "query": { } }
 
 // free-public-apis_load: one record by id
-{ "entity": "ap_i", "query": { "id": 1 } }
+{ "entity": "api", "query": { "id": 1 } }
 ```
 
 > The rest of this guide follows the [Diátaxis](https://diataxis.fr) framework:
@@ -60,8 +60,8 @@ Tool-call arguments (what an agent sends):
    ```
 
 4. **Restart Claude Code.** The `free-public-apis_list` and `free-public-apis_load` tools now appear
-   in new sessions. Ask the agent to *"list ap_i using free-public-apis"*
-   and it calls `free-public-apis_list` with `{"entity":"ap_i"}`.
+   in new sessions. Ask the agent to *"list api using free-public-apis"*
+   and it calls `free-public-apis_list` with `{"entity":"api"}`.
 
 ## How-to guides
 
@@ -92,7 +92,7 @@ Args: `entity` (required), `query` (optional filter map). Returns the first
 page of records as JSON:
 
 ```jsonc
-{ "entity": "ap_i" }
+{ "entity": "api" }
 ```
 
 ### Call the `free-public-apis_load` tool
@@ -101,7 +101,7 @@ Args: `entity` (required), `query` = `{"id":N}` (required). Returns the single
 record as JSON:
 
 ```jsonc
-{ "entity": "ap_i", "query": { "id": 1 } }
+{ "entity": "api", "query": { "id": 1 } }
 ```
 
 ### Cross-compile release binaries
@@ -153,7 +153,7 @@ JSON schemas are emitted by the SDK from the `Args` struct's `json` /
 
 The 1 entity valid as the `entity` argument:
 
-ap_i
+api
 
 ### Smoke test via HTTP (raw JSON-RPC)
 
@@ -173,7 +173,7 @@ curl -sN -X POST http://localhost:18080 \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json, text/event-stream' \
   -H "Mcp-Session-Id: $SESSION" \
-  -d '{"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"free-public-apis_load","arguments":{"entity":"ap_i","query":{"id":1}}}}'
+  -d '{"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"free-public-apis_load","arguments":{"entity":"api","query":{"id":1}}}}'
 ```
 
 ## Explanation

@@ -1,6 +1,6 @@
 // FreePublicApis Ts SDK
 
-import { ApIEntity } from './entity/ApIEntity'
+import { ApiEntity } from './entity/ApiEntity'
 
 export type * from './FreePublicApisTypes'
 
@@ -124,7 +124,6 @@ class FreePublicApisSDK {
 
     const options = this._options
 
-    // Build spec directly from SDK options + user-provided fetch args.
     const spec: any = {
       base: options.base,
       prefix: options.prefix,
@@ -140,7 +139,6 @@ class FreePublicApisSDK {
 
     ctx.spec = spec
 
-    // Merge user-provided headers over SDK defaults.
     if (fetchargs.headers) {
       const uheaders = fetchargs.headers
       for (let key in uheaders) {
@@ -150,7 +148,6 @@ class FreePublicApisSDK {
 
     
 
-    // Apply SDK auth (apikey, auth prefix, etc.)
     const authResult = prepareAuth(ctx)
     if (authResult instanceof Error) {
       return authResult
@@ -243,18 +240,6 @@ class FreePublicApisSDK {
 
 
 
-  // Raw GraphQL access: the pressure valve that makes the generated
-  // surface's deliberate omissions (per-call selection sets, typed filter
-  // builders, batching, subscriptions) livable — the whole schema stays
-  // reachable.
-  //
-  // Thin wrapper over the same prepare/fetch path `direct` uses, with the
-  // one thing raw `direct` cannot do for GraphQL: a GraphQL failure rides
-  // HTTP 200 as a top-level `errors` array, so status alone would report a
-  // failed query as ok.
-  //
-  // NOTE: like `direct`, this bypasses the feature pipeline — no retry,
-  // ratelimit or paging features apply.
   async graphql(query: string, variables?: any, ctrl?: any) {
     const options = this._options
 
@@ -297,12 +282,12 @@ class FreePublicApisSDK {
 
 
 
-  // Entity access: `client.ApI().list()` / `client.ApI().load({ id })`.
+  // Entity access: `client.Api().list()` / `client.Api().load({ id })`.
   // The argument is the entity OPTIONS object (passed to the entity
   // constructor as entopts), not initial entity data.
-  ApI(entopts?: Record<string, any>) {
+  Api(entopts?: Record<string, any>) {
     const self = this
-    return new ApIEntity(self, entopts)
+    return new ApiEntity(self, entopts)
   }
 
 

@@ -1,4 +1,4 @@
-import { ApIEntity } from './entity/ApIEntity';
+import { ApiEntity } from './entity/ApiEntity';
 export type * from './FreePublicApisTypes';
 import { inspect } from 'node:util';
 import type { Context, Feature } from './types';
@@ -44,7 +44,7 @@ declare class FreePublicApisSDK {
         data?: undefined;
     }>;
     graphql(query: string, variables?: any, ctrl?: any): Promise<any>;
-    ApI(entopts?: Record<string, any>): ApIEntity;
+    Api(entopts?: Record<string, any>): ApiEntity;
     static test(testoptsarg?: any, sdkoptsarg?: any): FreePublicApisSDK;
     tester(testopts?: any, sdkopts?: any): FreePublicApisSDK;
     toJSON(): {

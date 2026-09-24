@@ -349,15 +349,15 @@ end
 
 
 
--- Idiomatic facade: client:ApI():list() / client:ApI():load({ id = ... })
+-- Idiomatic facade: client:Api():list() / client:Api():load({ id = ... })
 -- Entity access is capitalised (PascalCase) for parity with the other SDKs.
-function FreePublicApisSDK:ApI(data)
-  local EntityMod = require("entity.ap_i_entity")
+function FreePublicApisSDK:Api(data)
+  local EntityMod = require("entity.api_entity")
   if data == nil then
-    if self._ap_i == nil then
-      self._ap_i = EntityMod.new(self, nil)
+    if self._api == nil then
+      self._api = EntityMod.new(self, nil)
     end
-    return self._ap_i
+    return self._api
   end
   return EntityMod.new(self, data)
 end

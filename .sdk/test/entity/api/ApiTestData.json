@@ -1,0 +1,64 @@
+{
+  "existing": {
+    "api": {
+      "API00": {
+        "auth": "s64",
+        "category": "s65",
+        "cors": "s66",
+        "description": "s67",
+        "https": true,
+        "id": "API00",
+        "name": "s6a",
+        "status": "s6b",
+        "tested": "s6c",
+        "url": "s6d"
+      },
+      "API01": {
+        "auth": "sc8",
+        "category": "sc9",
+        "cors": "sca",
+        "description": "scb",
+        "https": true,
+        "id": "API01",
+        "name": "sce",
+        "status": "scf",
+        "tested": "sd0",
+        "url": "sd1"
+      },
+      "API02": {
+        "auth": "s12c",
+        "category": "s12d",
+        "cors": "s12e",
+        "description": "s12f",
+        "https": true,
+        "id": "API02",
+        "name": "s132",
+        "status": "s133",
+        "tested": "s134",
+        "url": "s135"
+      }
+    }
+  },
+  "new": {
+    "api": {
+      "api_ref01": {
+        "auth": "s190",
+        "category": "s191",
+        "cors": "s192",
+        "description": "s193",
+        "https": true,
+        "name": "s196",
+        "status": "s197",
+        "tested": "s198",
+        "url": "s199"
+      }
+    }
+  },
+  "requests": {
+    "GET /api.php": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -41,9 +41,9 @@ client = FreePublicApisSDK.test()
 
 ### Instance Methods
 
-#### `ApI(data=None)`
+#### `Api(data=None)`
 
-Create a new `ApIEntity` instance. Pass `None` for no initial data.
+Create a new `ApiEntity` instance. Pass `None` for no initial data.
 
 #### `options_map() -> dict`
 
@@ -77,10 +77,10 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 
 ---
 
-## ApIEntity
+## ApiEntity
 
 ```python
-ap_i = client.ApI()
+api = client.Api()
 ```
 
 ### Fields
@@ -105,9 +105,9 @@ ap_i = client.ApI()
 List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.ApI().list()
-for ap_i in results:
-    print(ap_i)
+results = client.Api().list()
+for api in results:
+    print(api)
 ```
 
 ### Common Methods
@@ -130,7 +130,7 @@ Set the entity match criteria.
 
 #### `make() -> Entity`
 
-Create a new `ApIEntity` instance with the same options.
+Create a new `ApiEntity` instance with the same options.
 
 #### `get_name() -> str`
 

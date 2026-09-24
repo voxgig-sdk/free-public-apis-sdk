@@ -41,9 +41,9 @@ client = FreePublicApisSDK.test
 
 ### Instance Methods
 
-#### `ApI(data = nil)`
+#### `Api(data = nil)`
 
-Create a new `ApI` entity instance. Pass `nil` for no initial data.
+Create a new `Api` entity instance. Pass `nil` for no initial data.
 
 #### `options_map -> Hash`
 
@@ -83,10 +83,10 @@ same parameters as `direct()`. Raises on error.
 
 ---
 
-## ApIEntity
+## ApiEntity
 
 ```ruby
-ap_i = client.ApI
+api = client.Api
 ```
 
 ### Fields
@@ -111,7 +111,7 @@ ap_i = client.ApI
 List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.ApI.list
+results = client.Api.list
 ```
 
 ### Common Methods
@@ -134,7 +134,7 @@ Set the entity match criteria.
 
 #### `make -> Entity`
 
-Create a new `ApIEntity` instance with the same client and
+Create a new `ApiEntity` instance with the same client and
 options.
 
 #### `get_name -> String`

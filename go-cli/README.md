@@ -19,14 +19,14 @@ make build
 export FREE_PUBLIC_APIS_APIKEY=sk_live_xxx
 
 # 4. Each command line is ONE boru expression, run against the API:
-./free-public-apis-cli list ap_i
+./free-public-apis-cli list api
 
 # 5. Override the API base URL for a single call
-FREE_PUBLIC_APIS_BASE=https://api.example.com ./free-public-apis-cli list ap_i
+FREE_PUBLIC_APIS_BASE=https://api.example.com ./free-public-apis-cli list api
 
 # 6. No arguments -> interactive REPL
 ./free-public-apis-cli
-free-public-apis> list ap_i
+free-public-apis> list api
 free-public-apis> /quit
 ```
 
@@ -52,7 +52,7 @@ free-public-apis> /quit
    arguments to open the REPL):
 
    ```sh
-   ./dist/*/free-public-apis-cli list ap_i
+   ./dist/*/free-public-apis-cli list api
    ```
 
 4. **Go interactive.** Run the binary with no arguments to open the REPL, then
@@ -65,7 +65,7 @@ That is the whole loop: *build → set key → evaluate boru expressions*.
 ### List the records of an entity
 
 ```sh
-./free-public-apis-cli list ap_i
+./free-public-apis-cli list api
 ```
 
 `list <entity>` returns the first page of records. `<entity>` is a bareword —
@@ -78,7 +78,7 @@ Configuration is read from the environment — nothing is written to disk:
 ```sh
 export FREE_PUBLIC_APIS_APIKEY=sk_live_xxx            # API key
 export FREE_PUBLIC_APIS_BASE=https://api.example.com  # optional: override the API base URL
-./free-public-apis-cli list ap_i
+./free-public-apis-cli list api
 ```
 
 Both are injectable by a secrets vault, so the key never has to be typed inline.
@@ -90,7 +90,7 @@ evaluated as its own boru expression:
 
 ```text
 $ ./free-public-apis-cli
-free-public-apis> list ap_i
+free-public-apis> list api
 free-public-apis> /help
 free-public-apis> /quit
 ```
@@ -117,7 +117,7 @@ The CLI registers these boru words, each bound to the SDK:
 |----------|-----------------------------------------------|--------------------------------|
 | `list`   | `list <entity>` · `list <query> <entity>`     | First page of records          |
 
-- `<entity>` is a bareword, auto-quoted as an boru atom (e.g. `ap_i`).
+- `<entity>` is a bareword, auto-quoted as an boru atom (e.g. `api`).
 - `<query>` is either a **Map** (`{id:1}`) or a **Scalar** (`1`, treated as
   `{id:1}`). A scalar is always wrapped as `{id:<value>}`.
 
@@ -160,7 +160,7 @@ Meta-commands use the `/` prefix (everything else on a line is evaluated as boru
 
 The 1 entity this SDK exposes (any is valid as `<entity>`):
 
-ap_i
+api
 
 ## Explanation
 

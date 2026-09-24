@@ -307,10 +307,10 @@ class FreePublicApisSDK:
         return res
 
 
-    def ApI(self, data=None) -> "ApIEntity":
-        """Entity factory: client.ApI().list() / client.ApI().load({"id": ...})."""
-        from freepublicapis_sdk.entity.ap_i_entity import ApIEntity
-        return ApIEntity(self, data)
+    def Api(self, data=None) -> "ApiEntity":
+        """Entity factory: client.Api().list() / client.Api().load({"id": ...})."""
+        from freepublicapis_sdk.entity.api_entity import ApiEntity
+        return ApiEntity(self, data)
 
 
 
@@ -340,4 +340,4 @@ class FreePublicApisSDK:
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from freepublicapis_sdk.entity.ap_i_entity import ApIEntity
+    from freepublicapis_sdk.entity.api_entity import ApiEntity

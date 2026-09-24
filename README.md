@@ -14,20 +14,20 @@ Metadata kindly supplied by [www.freepublicapis.com](https://www.freepublicapis.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI with an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
 
-> **Features:** `ratelimit`, `retry`, `test`, `timeout` — opt-in,
+> **Features:** `undefined`, `undefined`, `undefined`, `undefined` — opt-in,
 > inactive until switched on, and configured per client. See the Features
 > section of any SDK README below for what each one does.
 
 ## Entities, not endpoints
 
-This SDK exposes the API as a small set of **semantic entities** — ApI — that you
+This SDK exposes the API as a small set of **semantic entities** — Api — that you
 call directly, instead of assembling URL paths and query strings. Entities are
 **Capitalised** to mark them as the primary surface, each with the operations they
 support (`list`):
 
 ```ts
 const client = new FreePublicApisSDK()
-const items = await client.ApI().list()
+const items = await client.Api().list()
 ```
 
 Thinking in entities keeps the mental model small — for people and AI agents alike —
@@ -46,13 +46,13 @@ network, and no credentials:
 // Shape: { entity: { <entity-name>: { <id>: <record> } } }
 const client = FreePublicApisSDK.test({
   entity: {
-    ap_i: {
+    api: {
       test01: { id: 'test01' },
     },
   },
 })
-const apis = await client.ApI().list()
-// apis is an array of ApI entities, populated with mock data
+const apis = await client.Api().list()
+// apis is an array of Api entities, populated with mock data
 // — call apis[0].data() for the record itself
 console.log(apis)
 ```
@@ -61,7 +61,7 @@ console.log(apis)
 
 ```python
 client = FreePublicApisSDK.test()
-apis = client.ApI().list()
+apis = client.Api().list()
 print(apis)
 ```
 
@@ -72,14 +72,14 @@ print(apis)
 $client = FreePublicApisSDK::test([
     "entity" => ["api" => ["test01" => []]],
 ]);
-$apis = $client->ApI()->list();
+$apis = $client->Api()->list();
 ```
 
 ### Golang
 
 ```go
 client := sdk.Test()
-result, err := client.ApI(nil).List(
+result, err := client.Api(nil).List(
     nil, nil,
 )
 ```
@@ -91,14 +91,14 @@ result, err := client.ApI(nil).List(
 client = FreePublicApisSDK.test({
   "entity" => { "api" => { "test01" => {} } },
 })
-apis = client.ApI.list()
+apis = client.Api.list()
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local results, err = client:ApI():list()
+local results, err = client:Api():list()
 ```
 
 ## Packages
@@ -123,8 +123,8 @@ import { FreePublicApisSDK } from '@voxgig-sdk/free-public-apis-sdk'
 
 const client = new FreePublicApisSDK()
 
-// List all apis (returns ApIEntity[] — .data() for the record)
-const apis = await client.ApI().list()
+// List all apis (returns ApiEntity[] — .data() for the record)
+const apis = await client.Api().list()
 for (const api of apis) {
   console.log(api)
 }
@@ -168,7 +168,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **ApI** | The ApI entity (list). | `/api.php` |
+| **Api** | The Api entity (list). | `/api.php` |
 
 The operations available across these entities are **list** — see each entity's
 own list above for exactly which it supports.
@@ -183,7 +183,7 @@ from freepublicapis_sdk import FreePublicApisSDK
 client = FreePublicApisSDK()
 
 # List all apis (returns a list, raises on error)
-apis = client.ApI().list()
+apis = client.Api().list()
 for api in apis:
     print(api)
 ```
@@ -197,7 +197,7 @@ require_once 'freepublicapis_sdk.php';
 $client = new FreePublicApisSDK();
 
 // List all apis (returns an array; throws on error)
-$apis = $client->ApI()->list();
+$apis = $client->Api()->list();
 print_r(array_map(fn($item) => $item->data_get(), $apis));
 ```
 
@@ -209,11 +209,11 @@ import sdk "github.com/voxgig-sdk/free-public-apis-sdk/go"
 client := sdk.New()
 
 // List all apis
-apIs, err := client.ApI(nil).List(nil, nil)
+apis, err := client.Api(nil).List(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(apIs)
+fmt.Println(apis)
 ```
 
 ### Ruby
@@ -224,7 +224,7 @@ require_relative "FreePublicApis_sdk"
 client = FreePublicApisSDK.new
 
 # List all apis (returns an Array; raises on error)
-apis = client.ApI.list
+apis = client.Api.list
 puts apis
 ```
 
@@ -236,7 +236,7 @@ local sdk = require("free-public-apis_sdk")
 local client = sdk.new()
 
 -- List all apis
-local apis, err = client:ApI():list()
+local apis, err = client:Api():list()
 print(apis)
 ```
 

@@ -1,0 +1,140 @@
+# Entity: api
+
+main: kit: entity: api: {
+
+  alias: field: {}
+
+  fields: {
+    auth: {
+      h: "Auth"
+      n: "auth"
+      r: false
+      sh: "Authentication type required"
+      t: "`$STRING`"
+    }
+    category: {
+      h: "Category"
+      n: "category"
+      r: false
+      sh: "Category of the API"
+      t: "`$STRING`"
+    }
+    cors: {
+      h: "Cors"
+      n: "cors"
+      r: false
+      sh: "CORS support status"
+      t: "`$STRING`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "Description of the API functionality"
+      t: "`$STRING`"
+    }
+    https: {
+      h: "Https"
+      n: "https"
+      r: false
+      sh: "Whether the API supports HTTPS"
+      t: "`$BOOLEAN`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      sh: "Unique identifier for the API"
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: false
+      sh: "Name of the API"
+      t: "`$STRING`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: false
+      sh: "Current status of the API"
+      t: "`$STRING`"
+    }
+    tested: {
+      fo: "date-time"
+      h: "Tested"
+      n: "tested"
+      r: false
+      sh: "Last tested timestamp"
+      t: "`$STRING`"
+    }
+    url: {
+      fo: "uri"
+      h: "Url"
+      n: "url"
+      r: false
+      sh: "URL of the API"
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "api"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /api.php"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "category"
+                or: "category"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api.php"
+          q: {
+            exist: [
+              "category"
+              "limit"
+            ]
+          }
+          s: [
+            {
+              lit: "api.php"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.apis`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

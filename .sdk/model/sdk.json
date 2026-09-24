@@ -24,139 +24,215 @@
         "repr": "auto"
       },
       "contributor": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
-        "ap_i": {
+        "api": {
           "active": true,
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "auth",
-              "req": false,
-              "short": "Authentication type required",
-              "type": "`$STRING`"
+          "fields": {
+            "auth": {
+              "a": true,
+              "h": "Auth",
+              "n": "auth",
+              "r": false,
+              "sh": "Authentication type required",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "category",
-              "req": false,
-              "short": "Category of the API",
-              "type": "`$STRING`"
+            "category": {
+              "a": true,
+              "h": "Category",
+              "n": "category",
+              "r": false,
+              "sh": "Category of the API",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "cors",
-              "req": false,
-              "short": "CORS support status",
-              "type": "`$STRING`"
+            "cors": {
+              "a": true,
+              "h": "Cors",
+              "n": "cors",
+              "r": false,
+              "sh": "CORS support status",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "description",
-              "req": false,
-              "short": "Description of the API functionality",
-              "type": "`$STRING`"
+            "description": {
+              "a": true,
+              "h": "Description",
+              "n": "description",
+              "r": false,
+              "sh": "Description of the API functionality",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "https",
-              "req": false,
-              "short": "Whether the API supports HTTPS",
-              "type": "`$BOOLEAN`"
+            "https": {
+              "a": true,
+              "h": "Https",
+              "n": "https",
+              "r": false,
+              "sh": "Whether the API supports HTTPS",
+              "t": "`$BOOLEAN`"
             },
-            {
-              "active": true,
-              "name": "id",
-              "req": false,
-              "short": "Unique identifier for the API",
-              "type": "`$STRING`"
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "sh": "Unique identifier for the API",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "name",
-              "req": false,
-              "short": "Name of the API",
-              "type": "`$STRING`"
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": false,
+              "sh": "Name of the API",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "status",
-              "req": false,
-              "short": "Current status of the API",
-              "type": "`$STRING`"
+            "status": {
+              "a": true,
+              "h": "Status",
+              "n": "status",
+              "r": false,
+              "sh": "Current status of the API",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "format": "date-time",
-              "name": "tested",
-              "req": false,
-              "short": "Last tested timestamp",
-              "type": "`$STRING`"
+            "tested": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Tested",
+              "n": "tested",
+              "r": false,
+              "sh": "Last tested timestamp",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "format": "uri",
-              "name": "url",
-              "req": false,
-              "short": "URL of the API",
-              "type": "`$STRING`"
+            "url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Url",
+              "n": "url",
+              "r": false,
+              "sh": "URL of the API",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "id": {
             "field": "id",
             "name": "id"
           },
-          "name": "ap_i",
+          "name": "api",
           "op": {
             "list": {
               "input": "data",
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /api.php",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "category",
-                        "orig": "category",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "category",
+                        "or": "category",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "limit",
-                        "orig": "limit",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "k": "query",
+                        "n": "limit",
+                        "or": "limit",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /api.php",
-                    "json": "{\"operationId\":\"getPublicAPIs\",\"parameters\":[{\"description\":\"Filter APIs by category\",\"in\":\"query\",\"name\":\"category\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Limit the number of results returned\",\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"maximum\":500,\"minimum\":1,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"apis\":[{\"auth\":\"apiKey\",\"category\":\"Development\",\"cors\":\"yes\",\"description\":\"A free public API for developers\",\"https\":true,\"id\":\"1\",\"name\":\"Example API\",\"status\":\"active\",\"tested\":\"2024-01-15T10:30:00Z\",\"url\":\"https://api.example.com\"}],\"count\":489},\"schema\":{\"properties\":{\"apis\":{\"items\":{\"properties\":{\"auth\":{\"description\":\"Authentication type required\",\"type\":\"string\"},\"category\":{\"description\":\"Category of the API\",\"type\":\"string\"},\"cors\":{\"description\":\"CORS support status\",\"type\":\"string\"},\"description\":{\"description\":\"Description of the API functionality\",\"type\":\"string\"},\"https\":{\"description\":\"Whether the API supports HTTPS\",\"type\":\"boolean\"},\"id\":{\"description\":\"Unique identifier for the API\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the API\",\"type\":\"string\"},\"status\":{\"description\":\"Current status of the API\",\"type\":\"string\"},\"tested\":{\"description\":\"Last tested timestamp\",\"format\":\"date-time\",\"type\":\"string\"},\"url\":{\"description\":\"URL of the API\",\"format\":\"uri\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"count\":{\"description\":\"Total number of APIs returned\",\"example\":489,\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response with list of public APIs\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request - invalid parameters\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
-                  },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/api.php",
-                  "segments": [
-                    {
-                      "lit": "api.php"
-                    }
-                  ],
-                  "select": {
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/api.php",
+                  "q": {
                     "exist": [
                       "category",
                       "limit"
                     ]
                   },
-                  "transform": {
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "api.php"
+                    }
+                  ],
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body.apis`"
                   }
@@ -576,26 +652,26 @@
         }
       },
       "flow": {
-        "BasicApIFlow": {
+        "BasicApiFlow": {
           "active": true,
-          "entity": "ap_i",
-          "key$": "BasicApIFlow",
+          "entity": "api",
+          "key$": "BasicApiFlow",
           "kind": "basic",
-          "name": "BasicApIFlow",
+          "name": "BasicApiFlow",
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
-                    "ref": "ap_i_ref01"
+                    "ref": "api_ref01"
                   }
                 }
               ]

@@ -289,10 +289,10 @@ class FreePublicApisSDK
   end
 
 
-  # Canonical facade: client.ApI.list / client.ApI.load({ "id" => ... })
-  def ApI(data = nil)
-    require_relative 'entity/ap_i_entity'
-    ApIEntity.new(self, data)
+  # Canonical facade: client.Api.list / client.Api.load({ "id" => ... })
+  def Api(data = nil)
+    require_relative 'entity/api_entity'
+    ApiEntity.new(self, data)
   end
 
 

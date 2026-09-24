@@ -40,9 +40,9 @@ local client = sdk.test()
 
 ### Instance Methods
 
-#### `ApI(data)`
+#### `Api(data)`
 
-Create a new `ApI` entity instance. Pass `nil` for no initial data.
+Create a new `Api` entity instance. Pass `nil` for no initial data.
 
 #### `options_map() -> table`
 
@@ -80,10 +80,10 @@ same parameters as `direct()`.
 
 ---
 
-## ApIEntity
+## ApiEntity
 
 ```lua
-local ap_i = client:ApI(nil)
+local api = client:Api(nil)
 ```
 
 ### Fields
@@ -108,7 +108,7 @@ local ap_i = client:ApI(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:ApI():list()
+local results, err = client:Api():list()
 ```
 
 ### Common Methods
@@ -131,7 +131,7 @@ Set the entity match criteria.
 
 #### `make() -> Entity`
 
-Create a new `ApIEntity` instance with the same client and
+Create a new `ApiEntity` instance with the same client and
 options.
 
 #### `get_name() -> string`

@@ -4,7 +4,7 @@
 
 The Python SDK for the FreePublicApis API — an entity-oriented client following Pythonic conventions.
 
-The SDK exposes the API as capitalised, semantic **Entities** — for example `client.ApI()` — each
+The SDK exposes the API as capitalised, semantic **Entities** — for example `client.Api()` — each
 carrying a small, uniform set of operations (`list`) instead of raw URL
 paths and query strings. You work with named resources and verbs, which
 keeps the cognitive load low.
@@ -43,7 +43,7 @@ error — iterate it directly.
 
 ```python
 try:
-    apis = client.ApI().list()
+    apis = client.Api().list()
     for api in apis:
         print(api)
 except Exception as err:
@@ -57,7 +57,7 @@ Entity operations raise on failure, so wrap them in `try` / `except`:
 
 ```python
 try:
-    apis = client.ApI().list()
+    apis = client.Api().list()
     print(apis)
 except Exception as err:
     print(f"list failed: {err}")
@@ -126,7 +126,7 @@ client = FreePublicApisSDK.test()
 
 # Entity ops return the ENTITY and raises on error;
 # call data_get() for the record.
-api = client.ApI().list()
+api = client.Api().list()
 # api contains the mock response record
 ```
 
@@ -203,7 +203,7 @@ Creates a test-mode client with mock transport. Both arguments may be `None`.
 | `get_utility` | `() -> Utility` | Copy of the SDK utility object. |
 | `prepare` | `(fetchargs) -> dict` | Build an HTTP request definition without sending. Raises on error. |
 | `direct` | `(fetchargs) -> dict` | Build and send an HTTP request. Returns a result dict (branch on `ok`). |
-| `ApI` | `(data) -> ApIEntity` | Create an ApI entity instance. |
+| `Api` | `(data) -> ApiEntity` | Create an Api entity instance. |
 
 ### Entity interface
 
@@ -239,7 +239,7 @@ On error, `ok` is `False` and `err` contains the error value.
 
 ### Entities
 
-#### ApI
+#### Api
 
 | Field | Description |
 | --- | --- |
@@ -263,9 +263,9 @@ API path: `/api.php`
 ## Entities
 
 
-### ApI
+### Api
 
-Create an instance: `ap_i = client.ApI()`
+Create an instance: `api = client.Api()`
 
 #### Operations
 
@@ -291,7 +291,7 @@ Create an instance: `ap_i = client.ApI()`
 #### Example: List
 
 ```python
-ap_is = client.ApI().list()
+apis = client.Api().list()
 ```
 
 ## Features
@@ -455,7 +455,7 @@ Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-api = client.ApI()
+api = client.Api()
 api.list()
 
 # api.data_get() now returns the api data from the last list

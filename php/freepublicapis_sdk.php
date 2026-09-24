@@ -341,21 +341,21 @@ class FreePublicApisSDK
     }
 
 
-    private $_ap_i = null;
+    private $_api = null;
 
-    // Canonical facade: $client->ApI()->list() / ->load(["id" => ...]).
-    // PHP method names are case-insensitive, so lowercase $client->ap_i()
+    // Canonical facade: $client->Api()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->api()
     // resolves here too.
-    public function ApI($data = null)
+    public function Api($data = null)
     {
-        require_once __DIR__ . '/entity/ap_i_entity.php';
+        require_once __DIR__ . '/entity/api_entity.php';
         if ($data === null) {
-            if ($this->_ap_i === null) {
-                $this->_ap_i = new ApIEntity($this, null);
+            if ($this->_api === null) {
+                $this->_api = new ApiEntity($this, null);
             }
-            return $this->_ap_i;
+            return $this->_api;
         }
-        return new ApIEntity($this, $data);
+        return new ApiEntity($this, $data);
     }
 
 

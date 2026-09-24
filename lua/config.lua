@@ -79,92 +79,86 @@ local function make_config()
         ["content-type"] = "application/json",
       },
       entity = {
-        ["ap_i"] = {},
+        ["api"] = {},
       },
     },
     entity = {
-      ["ap_i"] = {
+      ["api"] = {
         ["fields"] = {
           {
             ["name"] = "auth",
-            ["short"] = "Authentication type required",
+            ["title"] = "Auth",
             ["type"] = "`$STRING`",
+            ["short"] = "Authentication type required",
           },
           {
             ["name"] = "category",
-            ["short"] = "Category of the API",
+            ["title"] = "Category",
             ["type"] = "`$STRING`",
+            ["short"] = "Category of the API",
           },
           {
             ["name"] = "cors",
-            ["short"] = "CORS support status",
+            ["title"] = "Cors",
             ["type"] = "`$STRING`",
+            ["short"] = "CORS support status",
           },
           {
             ["name"] = "description",
-            ["short"] = "Description of the API functionality",
+            ["title"] = "Description",
             ["type"] = "`$STRING`",
+            ["short"] = "Description of the API functionality",
           },
           {
             ["name"] = "https",
-            ["short"] = "Whether the API supports HTTPS",
+            ["title"] = "Https",
             ["type"] = "`$BOOLEAN`",
+            ["short"] = "Whether the API supports HTTPS",
           },
           {
             ["name"] = "id",
-            ["short"] = "Unique identifier for the API",
+            ["title"] = "Id",
             ["type"] = "`$STRING`",
+            ["short"] = "Unique identifier for the API",
           },
           {
             ["name"] = "name",
-            ["short"] = "Name of the API",
+            ["title"] = "Name",
             ["type"] = "`$STRING`",
+            ["short"] = "Name of the API",
           },
           {
             ["name"] = "status",
+            ["title"] = "Status",
+            ["type"] = "`$STRING`",
             ["short"] = "Current status of the API",
-            ["type"] = "`$STRING`",
           },
           {
-            ["format"] = "date-time",
             ["name"] = "tested",
-            ["short"] = "Last tested timestamp",
+            ["title"] = "Tested",
             ["type"] = "`$STRING`",
+            ["short"] = "Last tested timestamp",
+            ["format"] = "date-time",
           },
           {
-            ["format"] = "uri",
             ["name"] = "url",
-            ["short"] = "URL of the API",
+            ["title"] = "Url",
             ["type"] = "`$STRING`",
+            ["short"] = "URL of the API",
+            ["format"] = "uri",
           },
         },
         ["id"] = {
           ["field"] = "id",
           ["name"] = "id",
         },
-        ["name"] = "ap_i",
+        ["name"] = "api",
         ["op"] = {
           ["list"] = {
             ["input"] = "data",
             ["name"] = "list",
             ["points"] = {
               {
-                ["args"] = {
-                  ["query"] = {
-                    {
-                      ["kind"] = "query",
-                      ["name"] = "category",
-                      ["orig"] = "category",
-                      ["type"] = "`$STRING`",
-                    },
-                    {
-                      ["kind"] = "query",
-                      ["name"] = "limit",
-                      ["orig"] = "limit",
-                      ["type"] = "`$INTEGER`",
-                    },
-                  },
-                },
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api.php",
@@ -173,18 +167,35 @@ local function make_config()
                     ["lit"] = "api.php",
                   },
                 },
+                ["parts"] = {
+                  "api.php",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body.apis`",
+                },
+                ["args"] = {
+                  ["query"] = {
+                    {
+                      ["name"] = "category",
+                      ["orig"] = "category",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "limit",
+                      ["orig"] = "limit",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "query",
+                    },
+                  },
+                },
                 ["select"] = {
                   ["exist"] = {
                     "category",
                     "limit",
                   },
-                },
-                ["transform"] = {
-                  ["req"] = "`reqdata`",
-                  ["res"] = "`body.apis`",
-                },
-                ["parts"] = {
-                  "api.php",
                 },
               },
             },

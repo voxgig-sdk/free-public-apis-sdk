@@ -2,13 +2,13 @@
 
 # Typed models for the FreePublicApis SDK.
 #
-# GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-# params (op.<name>.points[].args.params[]). Member types come from the
+# GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+# params (op.<name>.points[].g.params[]). Member types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Ruby types are unenforced; these YARD
 # annotations document the shapes. Do not edit by hand.
 
-# ApI entity data model.
+# Api entity data model.
 #
 # @!attribute [rw] auth
 #   @return [String, nil]
@@ -39,7 +39,7 @@
 #
 # @!attribute [rw] url
 #   @return [String, nil]
-ApI = Struct.new(
+Api = Struct.new(
   :auth,
   :category,
   :cors,
@@ -53,14 +53,14 @@ ApI = Struct.new(
   keyword_init: true
 )
 
-# Request payload for ApI#list.
+# Request payload for Api#list.
 #
 # @!attribute [rw] category
 #   @return [String, nil]
 #
 # @!attribute [rw] limit
 #   @return [Integer, nil]
-ApIListMatch = Struct.new(
+ApiListMatch = Struct.new(
   :category,
   :limit,
   keyword_init: true

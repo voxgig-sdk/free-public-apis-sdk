@@ -12,5 +12,5 @@ var NewTestFeatureFunc func() Feature
 
 var NewTimeoutFeatureFunc func() Feature
 
-var NewApIEntityFunc func(client *FreePublicApisSDK, entopts map[string]any) FreePublicApisEntity
+var NewApiEntityFunc func(client *FreePublicApisSDK, entopts map[string]any) FreePublicApisEntity
 

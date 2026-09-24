@@ -83,92 +83,86 @@ func MakeConfig() map[string]any {
 				"content-type": "application/json",
 			},
 			"entity": map[string]any{
-				"ap_i": map[string]any{},
+				"api": map[string]any{},
 			},
 		},
 		"entity": map[string]any{
-			"ap_i": map[string]any{
+			"api": map[string]any{
 				"fields": []any{
 					map[string]any{
 						"name": "auth",
-						"short": "Authentication type required",
+						"title": "Auth",
 						"type": "`$STRING`",
+						"short": "Authentication type required",
 					},
 					map[string]any{
 						"name": "category",
-						"short": "Category of the API",
+						"title": "Category",
 						"type": "`$STRING`",
+						"short": "Category of the API",
 					},
 					map[string]any{
 						"name": "cors",
-						"short": "CORS support status",
+						"title": "Cors",
 						"type": "`$STRING`",
+						"short": "CORS support status",
 					},
 					map[string]any{
 						"name": "description",
-						"short": "Description of the API functionality",
+						"title": "Description",
 						"type": "`$STRING`",
+						"short": "Description of the API functionality",
 					},
 					map[string]any{
 						"name": "https",
-						"short": "Whether the API supports HTTPS",
+						"title": "Https",
 						"type": "`$BOOLEAN`",
+						"short": "Whether the API supports HTTPS",
 					},
 					map[string]any{
 						"name": "id",
-						"short": "Unique identifier for the API",
+						"title": "Id",
 						"type": "`$STRING`",
+						"short": "Unique identifier for the API",
 					},
 					map[string]any{
 						"name": "name",
-						"short": "Name of the API",
+						"title": "Name",
 						"type": "`$STRING`",
+						"short": "Name of the API",
 					},
 					map[string]any{
 						"name": "status",
+						"title": "Status",
+						"type": "`$STRING`",
 						"short": "Current status of the API",
-						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "date-time",
 						"name": "tested",
-						"short": "Last tested timestamp",
+						"title": "Tested",
 						"type": "`$STRING`",
+						"short": "Last tested timestamp",
+						"format": "date-time",
 					},
 					map[string]any{
-						"format": "uri",
 						"name": "url",
-						"short": "URL of the API",
+						"title": "Url",
 						"type": "`$STRING`",
+						"short": "URL of the API",
+						"format": "uri",
 					},
 				},
 				"id": map[string]any{
 					"field": "id",
 					"name": "id",
 				},
-				"name": "ap_i",
+				"name": "api",
 				"op": map[string]any{
 					"list": map[string]any{
 						"input": "data",
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"kind": "query",
-											"name": "category",
-											"orig": "category",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "limit",
-											"orig": "limit",
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/api.php",
@@ -177,18 +171,35 @@ func MakeConfig() map[string]any {
 										"lit": "api.php",
 									},
 								},
+								"parts": []any{
+									"api.php",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body.apis`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "category",
+											"orig": "category",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "limit",
+											"orig": "limit",
+											"type": "`$INTEGER`",
+											"kind": "query",
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"category",
 										"limit",
 									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body.apis`",
-								},
-								"parts": []any{
-									"api.php",
 								},
 							},
 						},

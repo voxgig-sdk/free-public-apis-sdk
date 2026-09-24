@@ -47,9 +47,9 @@ client := sdk.TestSDK(testopts, sdkopts)
 
 ### Instance Methods
 
-#### `ApI(data map[string]any) FreePublicApisEntity`
+#### `Api(data map[string]any) FreePublicApisEntity`
 
-Create a new `ApI` entity instance. Pass `nil` for no initial data.
+Create a new `Api` entity instance. Pass `nil` for no initial data.
 
 #### `OptionsMap() map[string]any`
 
@@ -87,11 +87,11 @@ same parameters as `Direct()`.
 
 ---
 
-## ApIEntity
+## ApiEntity
 
 ```go
-apI := client.ApI(nil)
-fmt.Println(apI.GetName()) // "ap_i"
+api := client.Api(nil)
+fmt.Println(api.GetName()) // "api"
 ```
 
 ### Fields
@@ -116,7 +116,7 @@ fmt.Println(apI.GetName()) // "ap_i"
 List entities matching the given criteria. Returns an array.
 
 ```go
-results, err := client.ApI(nil).List(nil, nil)
+results, err := client.Api(nil).List(nil, nil)
 if err != nil {
     panic(err)
 }
@@ -137,7 +137,7 @@ Get or set the entity match criteria. Works the same as `Data()`.
 
 #### `Make() Entity`
 
-Create a new `ApIEntity` instance with the same client and
+Create a new `ApiEntity` instance with the same client and
 options.
 
 #### `GetName() string`

@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 // Typed models for the FreePublicApis SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 //
@@ -12,8 +12,8 @@ declare(strict_types=1);
 // registered on the composer classmap autoload. The SDK boundary exchanges
 // assoc-arrays; these classes name the shapes for tooling and typed callers.
 
-/** ApI entity data model. */
-class ApI
+/** Api entity data model. */
+class Api
 {
     public ?string $auth = null;
     public ?string $category = null;
@@ -27,8 +27,8 @@ class ApI
     public ?string $url = null;
 }
 
-/** Request payload for ApI#list. */
-class ApIListMatch
+/** Request payload for Api#list. */
+class ApiListMatch
 {
     public ?string $category = null;
     public ?int $limit = null;

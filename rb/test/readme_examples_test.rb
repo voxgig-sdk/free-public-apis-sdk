@@ -43,7 +43,7 @@ class ReadmeExamplesTest < Minitest::Test
 
   # Entity accessor (client.<Name>) => fixture storage key (lowercase name).
   ENTITIES = {
-    "ApI" => "ap_i",
+    "Api" => "api",
   }
 
   # Documented SDK method names — used only to recognise the NARROW

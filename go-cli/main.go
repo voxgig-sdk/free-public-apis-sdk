@@ -20,7 +20,7 @@ import (
 const prompt = "free-public-apis"
 
 // entitiesHelp is the space-separated entity list shown by /help.
-const entitiesHelp = "ap_i"
+const entitiesHelp = "api"
 
 func main() {
 	os.Exit(run(os.Args[1:], os.Stdin, os.Stdout, os.Stderr))
