@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 FreePublicApisUtility.registrar = ->(u) {
   u.clean = FreePublicApisUtilities::Clean
+  u.clean_add = FreePublicApisUtilities::CleanAdd
+  u.clean_explain = FreePublicApisUtilities::CleanExplain
   u.done = FreePublicApisUtilities::Done
   u.make_error = FreePublicApisUtilities::MakeError
   u.feature_add = FreePublicApisUtilities::FeatureAdd

@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 FreePublicApisUtility::setRegistrar(function (FreePublicApisUtility $u): void {
     $u->clean = [FreePublicApisClean::class, 'call'];
+    $u->clean_add = [FreePublicApisClean::class, 'add'];
+    $u->clean_explain = [FreePublicApisDone::class, 'clean_explain'];
     $u->done = [FreePublicApisDone::class, 'call'];
     $u->make_error = [FreePublicApisMakeError::class, 'call'];
     $u->feature_add = [FreePublicApisFeatureAdd::class, 'call'];
