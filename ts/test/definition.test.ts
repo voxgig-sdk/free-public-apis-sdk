@@ -20,9 +20,23 @@ const PLAN: any[] = [
       "limit": "v1"
     },
     "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
     "query": [
       "category",
       "limit"
+    ],
+    "queryArgs": [
+      {
+        "name": "category",
+        "wire": "category"
+      },
+      {
+        "name": "limit",
+        "wire": "limit"
+      }
     ],
     "auth": null,
     "status": 200,

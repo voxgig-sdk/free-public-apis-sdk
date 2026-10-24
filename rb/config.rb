@@ -79,6 +79,7 @@ module FreePublicApisConfig
           },
           "optspec" => {
             "clearTimer" => "`$FUNCTION`",
+            "now" => "`$FUNCTION`",
             "setTimer" => "`$FUNCTION`",
           },
           "strict" => false,
@@ -194,6 +195,7 @@ module FreePublicApisConfig
                         "orig" => "category",
                         "type" => "`$STRING`",
                         "kind" => "query",
+                        "field" => true,
                       },
                       {
                         "name" => "limit",
@@ -203,11 +205,10 @@ module FreePublicApisConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "category",
-                      "limit",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],

@@ -115,11 +115,9 @@ main: kit: entity: api: {
           }
           m: "GET"
           o: "/api.php"
-          q: {
-            exist: [
-              "category"
-              "limit"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {

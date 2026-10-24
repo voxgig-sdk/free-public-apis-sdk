@@ -3,5 +3,17 @@
     "SUMMARY.md"
   ],
   "config": ".sdk/doc/qa/vale.ini",
-  "routes": {}
+  "routes": {},
+  "quoted": {
+    "SUMMARY.md": [
+      "Authentication type required",
+      "CORS support status",
+      "Category of the API",
+      "Description of the API functionality",
+      "Production server",
+      "Successful response with list of public APIs",
+      "This API provides access to a collection of 489 free public APIs that are valuable for students and developers alike. Each API is tested daily to ensure reliability and accuracy.",
+      "Whether the API supports HTTPS"
+    ]
+  }
 }
